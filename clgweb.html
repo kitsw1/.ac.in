@@ -1,0 +1,1911 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<!-- Mirrored from www.kitsw.ac.in/ by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 03 Nov 2017 12:32:38 GMT -->
+<!-- Added by HTTrack --><!-- /Added by HTTrack --><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="google-site-verification" content="PjmrvFB5Qp164VOqSUYti1y7mUVx2l-Q1lqc0ym6Nlg" />
+<!--<meta name="google-site-verification" content="rzUiqzxTDjLmW4VliIp26NO8og0uQ1QBxnaioLPpRQ8" />-->
+
+<title>Kits Warangal</title>
+<link rel="stylesheet" type="text/css" media="all" href="code/css/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="code/css/960.css" />
+<link rel="stylesheet" type="text/css" media="all" href="960.css" />
+
+<!-- the radio button option selection start -->
+<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+<script type='text/javascript'>  
+  
+ var $jq = jQuery.noConflict();  
+  
+</script> 
+<script type="text/javascript">
+
+$jq(document).ready(function() {		
+	
+	//Execute the slideShow
+	slideShow();
+
+});
+
+function slideShow() {
+
+	//Set the opacity of all images to 0
+	$jq('#gallery a').css({opacity: 0.0});
+	
+	//Get the first image and display it (set it to full opacity)
+	$jq('#gallery a:first').css({opacity: 1.0});
+	
+	//Set the caption background to semi-transparent
+	$jq('#gallery .caption').css({opacity: 1.0});
+
+	//Resize the width of the caption according to the image width
+	$jq('#gallery .caption').css({width: $jq('#gallery a').find('img').css('width'-'781px')});
+	
+	//Get the caption of the first image from REL attribute and display it
+	$jq('#gallery .content').html($jq('#gallery a:first').find('img').attr('rel'))
+	.animate({opacity: 1.0}, 400);
+	
+	//Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
+	setInterval('gallery()',5000);
+	
+}
+
+function gallery() {
+	
+	//if no IMGs have the show class, grab the first image
+	var current = ($jq('#gallery a.show')?  $jq('#gallery a.show') : $jq('#gallery a:first'));
+
+	//Get next image, if it reached the end of the slideshow, rotate it back to the first image
+	var next = ((current.next().length) ? ((current.next().hasClass('caption'))? $jq('#gallery a:first') :current.next()) : $jq('#gallery a:first'));	
+	
+	//Get next image caption
+	var caption = next.find('img').attr('rel');	
+	
+	//Set the fade in effect for the next image, show class has higher z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+
+	//Hide the current image
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+	
+	//Set the opacity to 0 and height to 1px
+	$jq('#gallery .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });	
+	
+	//Animate the caption, opacity to 0.7 and heigth to 100px, a slide up effect
+	$jq('#gallery .caption').animate({opacity: 1.0},100 ).animate({height: '100%'},10 );
+	
+	//Display the content
+	$jq('#gallery .content').html(caption);	
+}
+
+</script>
+<script type="text/javascript">
+
+<!--
+
+// Simple onClick + Go radio button menu
+// by a1javascripts, www.a1javascripts.com.
+var new_url="";
+function goTo ()
+   {
+   if (  (new_url != "")  &&  (new_url != null)  )
+      window.location=new_url;
+}
+
+//-->
+</script>
+<!-- the radio button option selection end -->
+<!-- include jQuery library -->
+<script type="text/javascript" src="ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
+
+<script src="jQuery/includes/jquery.ui.core.min.js" type="text/javascript"></script>
+<script src="jQuery/includes/jquery.ui.widget.min.js" type="text/javascript"></script>
+<script src="jQuery/includes/jquery.ui.tabs.min.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryDOMUtils.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryDOMEffects.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryWidget.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryPanelSelector.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryPanelSet.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryFadingPanels.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryContentSlideShow.js" type="text/javascript"></script>
+
+<link href="jQuery/css/jquery.ui.core.css" rel="stylesheet" type="text/css" />
+<link href="jQuery/css/jquery.ui.tabs.css" rel="stylesheet" type="text/css" />
+<link href="jQuery/css/jquery.ui.theme.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+/* BeginOAWidget_Instance_2140022: #jQueryTabs */
+
+#jQueryTabs.ui-tabs .ui-tabs-panel { 
+	display: block; 
+	border-bottom:0px;
+	border-left:0px;
+	border-right:0px;
+	background: #ffffff; 
+	font-family: inherit;
+	font-size: 0.8em/*{fsDefault}*/; 
+}
+
+/* Component containers
+----------------------------------*/
+#jQueryTabs .ui-widget { 
+	
+}
+#jQueryTabs .ui-widget-content { 
+	border: 1px solid #aaaaaa/*{borderColorContent}*/; 
+	background: #ffffff/*{bgColorContent}*/ url()/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/; 
+	color: #222222/*{fcContent}*/; 
+}
+#jQueryTabs .ui-widget-content a { 
+	color: #0000ff/*{fcContent}*/; 
+}
+#jQueryTabs .ui-widget-header { 
+	border: 1px solid #fff/*{borderColorHeader}*/; 
+	background: transparent/*{bgColorHeader}*/ url()/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/; 
+	color: #222222/*{fcHeader}*/; 
+	font-weight: bold; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em/*{fsDefault}*/; 
+}
+
+/* Interaction states
+----------------------------------*/
+#jQueryTabs .ui-state-default, .ui-widget-content .ui-state-default { 
+	border: 1px double #666666/*{borderColorDefault}*/; 
+	background: #d3def2/*{bgColorDefault}*/ url()/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/; 
+	font-weight: normal/*{fwDefault}*/; 
+	color: #555555 /*{fcDefault}*/; 
+	
+}
+#jQueryTabs .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { 
+	color: #000/*{fcDefault}*/; 
+	text-decoration: none; 
+}
+#jQueryTabs .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus { 
+	border: 1px solid #999999/*{borderColorHover}*/; 
+	background: #e6e6e6/*{bgColorHover}*/ url()/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/; 
+	font-weight: normal/*{fwDefault}*/; 
+	color: #000 /*{fcHover} #212121*/; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: inherit/*{fsHover}*/; 
+}
+#jQueryTabs .ui-state-hover a, .ui-state-hover a:hover { 
+	color: #030/*{fcHover}*/; 
+	text-decoration: none; 
+	font-weight:bold;
+}
+#jQueryTabs .ui-state-active, .ui-widget-content .ui-state-active { 
+	border: 1px solid #aaaaaa/*{borderColorActive}*/; 
+	background: #d52b1e/*{bgColorActive}*/ url()/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/; 
+	font-weight: bold/*{fwDefault}*/; 
+	color: #212121/*{fcActive}*/; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: inherit/*{fsSelected}*/; 
+}
+#jQueryTabs .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { 
+	color: #ffffff/*{fcActive}*/; 
+	text-decoration: none; 
+}
+
+
+/* EndOAWidget_Instance_2140022 */
+
+</style>
+<script type="text/xml">
+<!--
+<oa:widgets>
+  <oa:widget wid="2140022" binding="#jQueryTabs" />
+  <oa:widget wid="2141541" binding="#ImageSlideShow" />
+</oa:widgets>
+-->
+</script>
+<script>
+  function OpenWindow(){
+    for(i=0;i<document.FormName["RB1"].length;i++){
+      if(document.FormName["RB1"][i].checked){
+    window.open(document.FormName["RB1"][i].value);
+    break;
+  }
+}
+  }
+</script>
+
+<script language="Javascript">
+function reformatDate(dateStr)
+{
+  dArr = dateStr.split("index.html");  // ex input "2010-01-18"
+  return dArr[2]+ "/" +dArr[1]+ "/" +dArr[0].substring(2); //ex out: "18/01/10"
+}
+
+</script>
+<link href="Spry-UI-1.7/css/ContentSlideShow/wanderlust/wanderlust-brown.css" rel="stylesheet" type="text/css" />
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Styles
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    <link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+    <style>
+		
+		.fluid_container {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+	height:260px;
+		}
+	</style>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+<script type='text/javascript' src='scripts/jquery.min.js'></script>
+    <script type='text/javascript' src='scripts/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='scripts/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='scripts/camera.min.js'></script> 
+    
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: true,
+				height: '260px',
+				width: '455px;',
+				fx:'scrollLeft',
+				loader:'none'
+				
+			});
+
+			jQuery('#camera_wrap_2').camera({
+				thumbnails: true,
+				height: '260px',
+				width: '455px;',
+				fx:'scrollRight',
+				
+				loader:'none'
+				
+			});
+		});
+	</script>
+<link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="cssverticalmenu.css" />
+
+<script type="text/javascript" src="cssverticalmenu.js">
+
+/***********************************************
+
+* CSS Vertical List Menu- by JavaScript Kit (www.javascriptkit.com)
+* Menu interface credits: http://www.dynamicdrive.com/style/csslibrary/item/glossy-vertical-menu/ 
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+
+***********************************************/
+
+</script>
+
+<script language="javascript" src="ticker.js" type="text/javascript"></script>
+<style>
+/*css button effect */
+.button {
+  background-color: #f68139; 
+  border: none;
+  color: white;
+  padding: 3px 26px;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+ 
+  border-radius: 4px;
+}
+.button:hover {
+  background-color:  #ffec00;
+  color: black;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div#ticker_container {
+	width: 940px;
+	/*border: 4px solid #000;*/
+	background:#d52b1e;
+	color:#FFF;
+	overflow: hidden;
+	/* [disabled]padding: 4px 0px; */
+	margin-left:5px;
+	/* [disabled]position: absolute; */
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	left: 1px;
+}
+
+ul#ticker {
+	width: 99999px;
+	list-style-type: none;
+	position: relative;
+}
+
+ul#ticker li {
+	float: left;
+	padding-right: 20px;
+}
+.style12 {color: #FF0000}
+.style21 {color: #FC0}
+.blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+</style>
+<script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+
+<style type="text/css">
+body{
+	font-family:arial
+}
+
+.clear {
+	clear:both
+}
+
+#gallery {
+	position:relative;
+	height:296px;
+	background-color:#d3def2;
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border:none;
+	}
+	
+	#gallery a.show {
+		z-index:500
+	}
+
+	#gallery .caption {
+	z-index:600;
+	margin:5px 8px;
+	color:#000;
+	height:100%;
+	width:159px;
+	position:absolute;
+	bottom:0;
+	margin-left: 781px;
+	}
+
+	#gallery .caption .content {
+		margin:5px;
+		color:#000;
+		font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:17px;
+	}
+	#gallery .caption .content h3{
+	margin:0px -5px;
+	height:20px;
+	padding:8px;
+	color:#006;
+	background-color:#fbcb5c;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}
+	
+
+#apDiv1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 183px;
+	top: 20px;
+}
+#apDiv2 {
+	position:absolute;
+	width:134px;
+	height:25px;
+	z-index:2;
+	left: 805px;
+	top: 99px;
+}
+</style>
+</head>
+
+<body>
+<div class="container_12">
+  <!--Header Div -->
+  
+ <!-- <div class="grid_12"  style="padding:0px; background-color: #d52b1e; ">-->
+  <!--<div  style="float:left; width:80px; height:50px;text-align:center; margin-top:3px;" ><a href="homepage_pages/DQ-CMR%20Ranking.pdf" target="_blank"><span style="color:#FF0; font-weight:bold;  text-decoration:underline; font-size:13px ">Best Tech School Survey 2017</span>--><!--<img src="survey.gif" alt="survey" /></a></div>-->
+  <!--<div>--><!--<img src="top_banner_04-6-17.gif" alt="ranking" />-->
+  <!-- <div align="right"> <img src="test1.gif" width="920" height="25" alt="BANNER-1">
+   </div>-->
+  <!-- <div> <img src="test2.gif" width="920" height="25" alt="BANNER-1">
+   </DIV>-->
+  <!-- </div>-->
+  
+<!--<img src="banner9.gif" width="940" height="27" alt="banner">--><!--</div>-->
+
+<div class="grid_12" id="" style="background-color:#d52b1e">
+	<div class="grid_10" style="text-align:left;">
+       <img src="img1.png" width="90" height="63" alt="naac_logo"><img src="https://www.kitsw.ac.in/images/naac-text.jpg" width="248" height="56" alt="naac-text">
+       <!--<img src="text-animation-1.5s-710x90px.gif"  alt="scroll" width="588" height=""  />-->
+       <!--<div id="apDiv2"></div>-->  &nbsp;
+       <img src="https://www.kitsw.ac.in/images/nirf_logo2.jpg" width="150" height="70" alt="nirf-logo"><img src="https://www.kitsw.ac.in/images/nirf_text.jpg" width="" height="60" alt="nirf-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   <img src="https://www.kitsw.ac.in/images/iso-9001-2015-new.jpg" width="80" height="45" alt="iso" style="margin-bottom:10px;">
+	</div>
+    <div class="grid_1_last" style="text-align:center;">
+      <a href="http://alumni.kitsw.ac.in/" target="_new"><img src="https://www.kitsw.ac.in/alumni_3.jpg" width="98" height="56"  alt="alumni" style="margin-top:15px;"></a>
+            <div style="height:10px;text-align:center; margin-top:1px;"><img src="https://www.kitsw.ac.in/aicte-cii%20scroller-banner.jpg" alt="scorller-top"></div></br>
+    </div>
+</div>
+
+<!--<div class="grid_12" id="" style="background-color:#d52b1e">
+	<div class="grid_10" style="text-align:left;">
+       <img src="NAAC_2018.png" width="80" height="63" alt="naac_logo"><img src="images/naac-text.jpg" width="260" height="64" alt="naac-text">
+       <!--<img src="text-animation-1.5s-710x90px.gif"  alt="scroll" width="588" height=""  />-->
+       <!--<div id="apDiv2"></div>-->  
+<!--       <img src="images/nirf_logo2.jpg" width="150" height="70" alt="nirf-logo"><img src="images/nirf_text.jpg" width="" height="64" alt="nirf-text">
+	   <img src="images/iso-2015.jpg" width="100" height="64" alt="iso">
+</div>
+<div class="grid_1_last" style="text-align:center;"><a href="http://alumni.kitsw.ac.in/" target="_new"><img src="alumni_3.jpg" width="90" height="64"  alt="alumni" style="margin-top:10px; margin-right:1px;"></a>
+</div>
+</div>-->
+<!--<div class="grid_12_last" id="" style="background-color:#d52b1e; text-align:right; margin-bottom:-5px;">-->
+
+
+        <!--<div class="grid_2_last"><ul style="float:right; padding-top:6px;/* [disabled]padding-top:4px; */ font-size:12px;">
+			<li><a href="http://alumni.kitsw.ac.in/" target="_new"><img src="alumni_register.gif" width="125" height="27" alt="alumni"></a></li>
+			
+			<!--<li><a href="#">Campus News</a></li>
+
+<span class="style22"></span>
+		  
+              </ul></div>-->
+
+  
+<!--  <div class="grid_12" style="padding:0px; background-color: #d52b1e;  height:30px;">
+  
+  <div style="height:25px;text-align:center; margin-top:1px;"><img src="scroller-banner-14dec2017_final.gif" alt="scorller-top"></div>
+  </div> --> 
+    
+<div class="grid_12" style="background-image:url(images/header_bg.jpg); background-repeat:repeat-x; float:left; background-color:#003b77;" >
+	<div style="float:left;" ></div>
+    <div style="float:left;"><a href="#"><img src="https://www.kitsw.ac.in/images/logo.jpg" alt=""/><img src="https://www.kitsw.ac.in/images/header.gif" alt="" width=""/></a></div>
+    <div style="float:right; width:155px; height:110px; margin:5px; font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+ <!-- <div id="weblinks" style="width:140px; height:100px; padding:2px; margin-top:3px; margin-left:10px; float:left; border:1px solid #ff0; border-radius:10px; color:#FFF;/* [disabled]background-color:#101538; */"><br/>
+  
+radio vuttons commented  
+
+<form name="FormName"><div style="height:20px; width:145px; float:left;">&nbsp;&nbsp;
+<input type="radio"  name="RB1" value="https://kitsw.rlabs.co.in" /><span style="font-size:11px; vertical-align: text-top; font-weight:normal;"> CourseWeb</span><br/> &nbsp;&nbsp;
+<input type="radio"  name="RB1" value="https://cms.kitsw.org/" /> <span style="font-size:11px; vertical-align: text-top; font-weight:normal;">CMS</span><br/> 
+
+<input type="radio"  name="RB1" value="https://gmail.com/" target="_new" /><span style="font-size:11px; vertical-align: text-top; font-weight:normal; "> Domain Mail</span><br/>&nbsp;&nbsp;
+<input type="radio"  name="RB1" value="https://login.microsoftonline.com/common/oauth2/authorize?response_type=id_token&client_id=5e3ce6c0-2b1f-4285-8d4b-75ee78787346&redirect_uri=https%3A%2F%2Fteams.microsoft.com%2Fgo&state=5e5007d1-4be7-4651-93fe-29b4d2218d5f&&client-request-id=9dbe1278-5517-45f7-8d81-e602cdfec5b1&x-client-SKU=Js&x-client-Ver=1.0.9&nonce=4ff1202e-4f37-4c2f-a930-bee7aef1bf7b&domain_hint=" target="_new" /><span style="font-size:11px; vertical-align: text-top; font-weight:normal; "> Microsoft Teams</span><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div><br/><br/><br/><br/><br/>
+<div style="width:140px; margin-left:12px; margin-top:4px;">&nbsp;&nbsp;&nbsp; <input type="image" src="images/login.jpg" value="Open New Window" name="butt" onClick="OpenWindow()" alt="Submit">
+<br/> </div></form>  
+radiobuttons commented---------------------
+
+ </div>
+    <div class="clear"></div>
+
+-->		
+	
+   <div id="search" style="width:140px; height:110px; padding:2px; float:left; padding-left:10px; border:1px solid #ffff00; border-radius:10px; color:#FFF;/* [disabled]background-color:#101538; */">
+        <form>
+            <!--
+    <INPUT onBlur="changeTextValue(this.id ,this.value ,'Search...')" 
+    title="Search" name="query" value="" type="text" style="width:110px; height:18px; float:left; background-image:url(images/search_bg.jpg); background-repeat:no-repeat;/* [disabled]background-color:#101538; */ border:none; margin-top:0px; vertical-align:middle; text-align:center;"><INPUT  name="search" value=" " type="button" style=" height:18px; width:16px; margin-left:1px; background-image:url(images/search.jpg); background-color:#000; background-repeat:no-repeat; margin-top:1px; border:none;"><div style="height:20px; width:120px; float:left;"><input type="radio" name="SB1" /> <span style="font-size:11px; vertical-align: text-bottom; font-weight:bold; ">Web </span><input type="radio" name="SB1" /><span style="font-size:11px; vertical-align: text-bottom;; font-weight:bold; "> KITSW </span></div>
+    -->
+    
+     <div align=center><a href="https://kitsw.rlabs.co.in" target="_blank" class="button">CourseWeb</a></div><br>
+     <div align=center><a href="https://cms.kitsw.org" target="_blank" class="button">CMS</a></div><br>
+     <div align=center><a href="https://gmail.com" target="_blank" class="button">Domain mail</a></div><br>
+     <div align=center><a href="https://teams.microsoft.com" target="_blank" class="button">Microsoft.Teams</a></div><br>
+    </form></div>
+    
+    </div>
+</div> 
+    
+<!-- Radio buttons commented     
+  <div id="weblinks" style="width:148px; height:64px; padding:1px; margin-top:0px; float:left; border:1px solid #ff0; border-radius:10px; color:#FFF;/* [disabled]background-color:#101538; */"><br/>
+  <form name="FormName"><div style="height:20px; width:145px; float:left;">&nbsp;&nbsp;&nbsp;
+<input type="radio"  name="RB1" value="https://cms.kitsw.org/" /> <span style="font-size:12px; vertical-align: text-top; font-weight:normal;  ">CMS</span> 
+
+<input type="radio"  name="RB1" value="https://gmail.com/" target="_new" /><span style="font-size:11px; vertical-align: text-top; font-weight:normal; "> Webmail</span><br/>
+</div>
+<div style="width:150px; margin-left:18px;">&nbsp;&nbsp;&nbsp; <input type="image" src="images/login.jpg" value="Open New Window" name="butt" onClick="OpenWindow()" alt="Submit">
+<br/> </div></form>  
+  </div>
+  -->
+<!--    </div>
+</div>
+    <div class="clear"></div>-->
+    <!-- END HeaderDiv -->
+	
+	<!-- Navbar Div -->
+<div class="grid_12" id="navbar">
+		<ul>
+			<li><a href="homepage_pages/Autonomous.html">UGC Autonomous</a></li>
+            <li><a href="homepage_pages/Affliation.html">Affiliation</a></li>
+			<li><a href="homepage_pages/Approvals.html">Approvals</a></li>
+			<li><a href="homepage_pages/Accreditation.html">Accreditation</a></li>
+<!--			<li><a href="homepage_pages/UGC_recog.html">UGC Recognition</a></li>
+			<li><a href="homepage_pages/mandatory_disclosure.html">Mandatory Disclosure</a></li>-->
+			<li><a href="homepage_pages/Mandatory Disclosure.pdf" target="_blank">Mandatory Disclosure</a></li>			
+            <!-- <!-- <li><a href="homepage_pages/rti.html">RTI</a></li> -->
+            <li><a href="homepage_pages/Grivance Reddressal Committee-2020.pdf" target="_new">Grievance Redressal</a></li>
+             <li ><a href="homepage_pages/anti_ragging.html">Anti Ragging</a></li>					 			 
+             <a href="http://www.nptelvideos.in/" target="_blank"><img src="https://www.kitsw.ac.in/images/NPTEL-Videos.jpg" width="95" height="19" alt="kitsmedia" /></a>
+          <a href="KITS-in-Media/kitsw-in-media.html" target="_blank"><!--<img src="images/icon_new.gif" width="25" height="13" alt="new" /><img src="images/kits_media_03122013.gif" width="120" height="22" alt="kitsmedia" /></a></li> --><img src="https://www.kitsw.ac.in/images/KITSW-in-Media.jpg" width="95" height="19" alt="kitsmedia" /><!--Kitsw in Media--></a>
+		</ul>
+</div>
+<!--<span class="grid_10" style="text-align:left;"><img src="images/nirf_logo2.jpg" width="150" height="70" alt="nirf-logo"></span>
+--><div class="clear">&nbsp;</div>
+    
+	<!-- End Navbar Div-->
+    
+	<!--Top Section-->
+	
+
+
+
+<div class="grid_12" >
+<div style="padding-top:0px; background-color:#39C;">
+		  <div id="gallery">
+          
+          <!--<a href="#" class=""><img src="homepage_pages/alumini2019.jpg" alt="" width="940" height="296"   /></a>		  
+<a href="#" class="show"><img src="Events/Others/exam_discuss.jpg" alt="" width="781" height="296" title="" rel="<h3>PARIKSHA PE CHARCHA 2.0</h3>NIC Webcast : <br /><a href='http://webcast.nic.in/mhrd' target='_blank'> http://webcast.nic.in/mhrd </a><br />
+YouTube : <br /><a href='https://www.youtube.com/user/HRDMinistry' target='_blank'> https://www.youtube.com/ user/HRDMinistry</a><br /><br />
+Facebook : <br /><a href='https://www.facebook.com/HRDMinistry' target='_blank'> https://www.facebook.com/ HRDMinistry</a><br />
+" /></a>-->
+<!--<div class="bgimg">
+<div class="middle">
+<p id="demo" style="font-size:40px; font-weight:bold; text-align:center">
+
+</p>
+</div>
+</div>
+ 
+<a href="#" class=""><img src="Events/Sankranti-Greetings.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Warm wishes to all faculty, staff and students of KITSW on the auspicious occasion of 'BHOGI, SANKRANTHI & KANUMA' - Principal" /></a>--> 
+<!-- <a href="academics/B.Tech. Lateral Spot Admissions.html" target="_blank" class=""><img src="Events/Others/B.Tech. Lateral Sopt Admissions.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>B.Tech. Lateral Entry Spot Admissions on 24.09.2021 @ 10:30 AM. CE, ME, EEE, ECI, CSN &  CSE seats will be filled as per guidelines issued by the Convenor, TSECET-2021(Admissions). For further details contact: 9866111404. (22.09.2021)" /></a>
+     <a href="academics/B.Tech. Lateral Spot Admissions.html" target="_blank" class=""><img src="Events/Others/B.Tech. Lateral Sopt Admissions.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>B.Tech. Lateral Entry Spot Admissions on 24.09.2021 @ 10:30 AM. CE, ME, EEE, ECI, CSN &  CSE seats will be filled as per guidelines issued by the Convenor, TSECET-2021(Admissions). For further details comntact: 9866111404. (22.09.2021)" /></a> -->
+
+
+<a href="#" class=""><img src="./pras5.jpeg" alt="" width="681" height="296" title="" rel="<h3>T & P - KITSW </h3><br> congrats nadikudi prashanth for having cigarett in hostel"   /></a>
+<a href="#" class=""><img src="./pras2.jpeg" alt="" width="681" height="296" title="" rel="<h3>T & P - KITSW </h3><br>congrats nadikudi prashanth for having cigarett in hostel"   /></a>
+<a href="#" class=""><img src="./pras3.jpeg" alt="" width="681" height="296" title="" rel="<h3>T & P - KITSW </h3><br>congrats nadikudi prashanth for having cigarett in hostel" /></a>
+<a href="#" class=""><img src="./pras6.GIF" alt="" width="581" height="296" title="" rel="<h3>T & P - KITSW </h3><br>congrats nadikudi prashanth for having cigarett in hostel" /></a>
+
+<a href="#" class=""><img src="./pras2.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3><br> "/></a>
+<a href="#" class=""><img src="./pras3.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3><br> "/></a>
+<a href="#" class=""><img src="./pras6.GIF" alt="" width="581" height="296" title="" rel="<h3>KITSW</h3><br> "/></a>
+
+<!--<a href="#" class=""><img src="Events/MED/MED_Placements.jpg" alt="" width="781" height="296" title="" rel="<h3>MED - KITSW </h3><br>Hearty congratulations💐💐💐💐 to all the 80 Mechanical Engg. Students of 2021 Batch placed into various MNC's. (26.08.2021)" /></a>-->
+
+ <a href="#" class=""><img src="./pras3.jpeg" alt="" width="781" height="296" title="" rel="<h3>CISCO CoE-KITSW</h3><br>Congratulations to all the students on successfully completing Cyber Security Virtual Internship Programme 2021 organized by CISCO CoE in association with I3C-KITSW. <br> (23.08.2021)"/></a> 
+ <a href="#" class=""><img src="./pras2.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3><br>Addressing by the Principal Prof. K. Ashoka Reddy during Azadi ka Amrith Mahotsav held at KITS Warangal Campus. <br> (16.08.2021)"/></a> 
+ <a href="#" class=""><img src="./pras5.jpeg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Hearty congratulations💐💐💐💐 to Mr. RAMA VIJAY SAI (B17CS008) for being offered with an annual CTC of Rs. 15.00 Lakhs in Experian IDC in the capacity of Software Engineer. (03.08.2021)" /></a>
+ <a href="#" class=""><img src="./pras6.GIF" alt="" width="581" height="296" title="" rel="<h3>KITSW </h3><br>Hearty Congratulations to Mr. V Ganesh, Winner of Oracle Academy ML Build-A-Thon in collaboration with Telangana Academy for Skill & Knowledge (TASK) and sponsored by Oracle Academy.(12.07.2021)" /></a>
+
+
+<!--<a href="faculty_recruitment_june2021.html" target="_blank" class=""><img src="Events/Faculty_Recruitment_june2021.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>KITSW invites candidates to apply for FACULTY POSITIONS, Closed"  /></a>-->
+<!--<a href="faculty_recruitment_june2021.html" target="_blank" class=""><img src="Events/Faculty_Recruitment_june2021.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>KITSW invites candidates to apply for FACULTY POSITIONS, Closed"  /></a>-->
+<!--<a href="#" class=""><img src="Events/TP/Infosys_placements_2021.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 104 Final Year Students of 2020-21 Batch are selected in Infosys Limited. (05.06.2021)"  /></a>-->
+<!--<a href="#" class=""><img src="Events/Others/CISCOcybersecurity.jpg" alt="" width="781" height="296" title="" rel="<h3>CISCO CoE, KITSW</h3><br><i>Awareness programme on </i>&#8221<b>CYBER SECURITY VIRTUAL INTERNSHIPS</b>&#8221, <i>a part of Digital Skills India initiative by</i> <br><b>CISCO-NASSCOM-AICTE</b>.<br><br><i>Organised by <br>I3C KITSW, TASK KITSW, CISCO CoE KITSW. (23.03.2021)</i>"/></a>-->
+
+<a href="#" class=""><img src="./pras6.GIF" alt="" width="581" height="296" title="" rel="<h3>KITSW</h3>Prof. V.Ramaiah, Professor I/C of MoUs & Internships  and Industry–Institute Interaction Cell for receiving a memento, honoured by Mr.KTR, Minister of Municipal Administration, Industries & IT and Chairman of CII, Telangana for Industry collaborations, CSR & Covid Relief activities for 2020-2021 during CII Telangana Annual Meeting held on 05/03/2021. (17.03.2021)"/></a>
+
+<!-- 
+<a href="#" class=""><img src="Events/Others/Congratulations_to_Dr. V.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3><br>Hearty Congratulations to Prof. V.Rajagopal, Professor of EEE and Dean, Academic Affairs Granted a Patent for Invention entitled 'A Hydro Power System' (Patent No. 360290) from The Patent office, Govt. of India.
+Hearty congratulations💐💐💐💐. (09.03.2021)"/></a>
+
+<a href="#" class=""><img src="Events/Others/Congratulations_to_Dr. V.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3><br>Hearty Congratulations to Prof. V.Rajagopal, Professor of EEE and Dean, Academic Affairs Granted a Patent for Invention entitled 'A Hydro Power System' (Patent No. 360290) from The Patent office, Govt. of India.
+Hearty congratulations💐💐💐💐. (09.03.2021)"/></a> 
+-->
+
+<a href="#" class=""><img src="Events/ECE/IEEE_Student_Paper.jpg" alt="" width="781" height="296" title="" rel="<h3>ECE Students- IEEE Paper</h3><br>6th Sem ECE students published IEEE conference paper. Presented their concept on VSD in an IEEE conference held at Coimbatore, India,  January 20-22, 2021
+Hearty congratulations💐💐💐💐. (04.03.2021)"/></a>
+
+<!--<a href="#" class=""><img src="Events/ECE/ICDECT-2021 Brochure-Poster-Release.jpg" alt="" width="781" height="296" title="" rel="<h3>ECE - KITSW </h3><br>  International Conference on “Data Engineering and Communication Technology (ICDECT2021)”  Brochure & Poster was launched by the Capt.V.Lakshmikantha Rao, M.P. (RS), Secretary & Correspondent and Sri P.Narayana Reddy garu, Treasurer, KITSW  on 22nd February, 2021. (01.03.2021)" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/ECE/IMG-20210218-WA0081.jpg" alt="" width="781" height="296" title="" rel="<h3>ECE - KITSW </h3><br> Dr.Dhanalaxmi Banavath, Asst. Professor, Dept. of ECE has been honoured with best women scientist award by Noval Research Academy, Puducherry, India. (19.02.2021)" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/ECE/IMG-20210218-WA0028.jpg" alt="" width="781" height="296" title="" rel="<h3>ECE - KITSW </h3><br>Dr.Dhanalaxmi Banavath, Asst. Professor, Dept. of ECE has been honoured with best women scientist award by Noval Research Academy, Puducherry, India. (19.02.2021)" /></a>
+
+<a href="#" class=""><img src="Events/ECE/ICDETC-2021 Brochure-release.jpg" alt="" width="781" height="296" title="" rel="<h3>ECE - KITSW </h3><br>International Conference on “Data Engineering and Communication Technology (ICDECT-2021)” Brochure & Poster was launched by the Shri. Vodithela Satish Kumar garu, MLA & Member, Ekashila Education Society and Prof.K.Ashoka Reddy, Principal. (15.02.2021)" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/Others/Dr.K.Rajendra Prasad_NPTEL_Translator_2021.jpg" alt="" width="781" height="296" title="" rel="<h3>NPTEL - KITSW </h3><br>Congratulations to Dr. K.Rajendra Prasad, Asst. Prof. of Physics & Faculty I/c, Examinations received Certificate of Appreciation from SWAYAM-NPTEL for translating the files of the course "Introduction to Electromagnetism(115104088)" offered by IIT Kanpur in Telugu language. (13.02.2021)" /></a>
+
+<a href="#" class=""><img src="Events/Others/Swayam-NPTEL-Toppers.jpg" alt="" width="781" height="296" title="" rel="<h3>NPTEL - KITSW </h3><br>Hearty Congratulations to SWAYAM-NPTEL 2020 July-December Semester Toppers" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/Others/Swayam-NPTEL-Toppers.jpg" alt="" width="781" height="296" title="" rel="<h3>NPTEL - KITSW </h3><br>Hearty Congratulations to SWAYAM-NPTEL 2020 July-December Semester Toppers" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/TP/Congratulations 605.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 606 Students of 2020 Batch placed into various MNC's. (16.03.2021)" /></a>-->
+
+<!--<a href="#" class=""><img src="Events/TP/Congratulations 31.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 31 Students of 2021 Batch placed into Wipro Talent Next and Tech Mahendra. (30.01.2021)" /></a>
+
+<a href="#" class=""><img src="Events/TP/Cognizant-placements-2021.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 111 Students of 2021 Batch placed into Cognizant corporation. (16.01.2021)" /></a>
+
+<a href="#" class=""><img src="Events/TP/GE-placements-2021.jpg" alt="" width="781" height="296" title="" rel="<h3>M.Tech Placements</h3> Hearty Congratulations M.Tech -POWER ELECTRONICS students placed in GE Energy CTC: 10.40 LPA <br>M19PE003 –J. RISHITH, M19PE006 –P. SRAVYA. (21.12.2020)"/></a>
+
+<a href="#" class=""><img src="Events/TP/TCS-Selects-2021.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 116 Students of 2021 Batch placed into Tata Consultancy Services Limited. (16.01.2021)" /></a>
+
+<a href="#" class=""><img src="Events/TP/Mindtree-2021.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 111 Students of 2021 Batch placed into Mindtree Limited. (16.01.2021)" /></a>
+
+<a href="#" class=""><img src="Events/Sumshodini-2020-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>A national level Student technical symposium “SUMSHODHINI 20” was held during 11th  and 12th  December, 2020 organized by ISTE KITS Student chapter and Technical Club through virtual mode. Mulugu District Collector S Krishna Aditya was Inaugurated the fest. (19.12.2020)" /></a>
+
+<a href="#" class=""><img src="Events/Sumshodini-2020-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the Mulugu District Collector S Krishna Aditya duing inauguration of national level student technical symposium “SUMSHODHINI 20” from 11th and 12th December, 2020 organized by ISTE KITS Student chapter and Technical Club through virtual mode.(19.12.2020)" /></a>
+
+<a href="#" class=""><img src="Events/Sumshodini-2020-3.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Mulugu District Collector S Krishna Aditya, The guest of honour, Yalavati Projects Private Limited, Hyderabad, Naveen Kumar Bandaru, Rajya Sabha Member Capt V Lakshmikantha Rao, Secretary & Correspondent, Principal Prof K Ashoka Reddy, Student Affairs Dean Prof G Raghotham Reddy were among others present during the photo session.(19.12.2020)" /></a>-->
+
+
+<!--<a href="#" class=""><img src="Events/M.Tech_placements.jpg" alt="" width="781" height="296" title="" rel="<h3>M.Tech Placements</h3> Hearty Congratulations M.Tech -POWER ELECTRONICS students placed in GE Energy CTC: 9.0LPA <br>M19PE003 –J. RISHITH, M19PE006 –P. SRAVYA."/></a>-->
+
+<!--<a href="#" class=""><img src="Events/AICTE-FDP-ECE.jpg" alt="" width="781" height="296" title="" rel="<h3>AICTE FDP</h3> Department of ECE is organizing AICTE sponsored Two Week FDP on Hands on Project-Based Approach for Biomedical Signal Analysis using MATLAB in two phases, FDP Phase-I:Dec 28,2020-Jan10,2021 and FDP Phase-II:February 01-13,2021. Last date for registration: 26.12.2020"./></a>-->
+
+<!--<a href="#" class=""><img src="Events/KITSW-NCC.jpg" alt="" width="781" height="296" title="" rel="<h3>👮NCC SELECTIONS👮</h3> We are glad to announce that NCC selections will be held for B.Tech 1st and 2nd year students(including lateral entry students) on 18-12-2020 at 2:00PM. Interested students can take part in it. Non-locals are requested to make their own arrangements to attend the selections because this is a one time opportunity." /></a>
+
+<a href="#" class=""><img src="Events/Congratulations 576.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 576 Students of 2020 Batch placed into various MNC's. (26.11.2020)" /></a>
+
+<a href="#" class=""><img src="Events/Congratulations 175.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 175 Students of 2021 Batch placed in DXC, CHUBB, HEXAWARE and EXPERIAN" /></a>
+
+<a href="#" class=""><img src="Events/KITSW-NCC.jpg" alt="" width="781" height="296" title="" rel="<h3>👮NCC SELECTIONS👮</h3> We are glad to announce that NCC selections will be held for B.Tech 1st and 2nd year students(including lateral entry students)
+on 18-12-2020 at 2:00PM. Interested students can take part in it. Non-locals are requested to make their own arrangements to attend the selections because this is a one time opportunity." /></a>
+
+<a href="#" class=""><img src="Events/Sumshodini-2020-Poster-release.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>A national level technical symposium “SUMSHODHINI 20” will be held on 11th  and 12th  December 2020 organized by ISTE KITS Student chapter and Technical Club through virtual mode. The Principal Prof. K.Ashoka Reddy released “SUMSHODHINI 20” poster on 25.11.2020.(27.11.2020)" /></a>-->
+
+<!--<a href="#" target="_blank" class=""><img src="Events/PG_Programmes_KITSW.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>PG PROGRAMMES @ KITSW."/></a>
+--><a href="#" target="_blank" class=""><img src="Events/Additional Learing-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Now KITSW allows Students for Additional Learning through MOOCs leading to UG Degree with HONOURS and / or MINOR in Engineering."/></a>
+<!--<a href="" class=""><img src="Events/EIE-STTP on VLSI-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-EIE</h3>STTP Brochure Release: Department of Electronics & Instrumentation Engg. is organizing one week AICTE Sponsored STTP on 'VLSI Design: Bridging Concepts to Practice' in three phases during November, 2020-January, 2021. (21-11-2020)"/></a>-->
+<!--<a href="#" target="_blank" class=""><img src="Events/PG_Programmes_KITSW.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>PG PROGRAMMES @ KITSW."/></a>
+-->
+<!--             B.Tech I-Year 2020-2021 Batch
+
+<a href="#" target="_blank" class=""><img src="Events/B.Tech_I_Year_Orientation_Thank_U.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear B.Tech I Year Students & Parents-2020 Batch... Thank you for attending FIRST YEAR ORIENTATION PROGRAMME ON 25.11.2020. THANK U FOR YOUR PRECIOUS TIME AND BEST WISHES TO STUDENTS."/></a>
+<a href="#" target="_blank" class=""><img src="Events/B.Tech_I_Year_Orientation_Programme_Preponed.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear B.Tech I Year Students & Parents-2020 Batch... First Year ORIENTATION PROGRAMME is PREPONED TO 9:00 AM on 25.11.2020(Instead of 10:30AM on 25.11.2020). The STUDENTS INDUCTION PROGRAMME(SIP) 2020 will start at 9:00AM on 26.11.2020(Thursday)."/></a>
+<a href="#" target="_blank" class=""><img src="Events/B.Tech_I_Year_Orientation_Programme_Preponed.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear B.Tech I Year Students & Parents-2020 Batch... First Year ORIENTATION PROGRAMME is PREPONED TO 9:00 AM on 25.11.2020(Instead of 10:30AM on 25.11.2020). The STUDENTS INDUCTION PROGRAMME(SIP) 2020 will start at 9:00AM on 26.11.2020(Thursday)."/></a>
+<a href="homepage_pages/Spot Admissions Check List.pdf" target="_blank" class=""><img src="Events/B.Tech_I_Year_Spot_Admissions.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student & Parents,Few Seats Available in B.Tech I Year Branches: CE, ME, EEE, ECE & ECI. Spot Admissions on 21.11.2020 @ 11:00 AM."/></a>
+<a href="homepage_pages/Spot Admissions Check List.pdf" target="_blank" class=""><img src="Events/B.Tech_I_Year_Spot_Admissions.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student & Parents,Few Seats Available in B.Tech I Year Branches: CE, ME, EEE, ECE & ECI. Spot Admissions on 21.11.2020 @ 11:00 AM."/></a>
+<a href="#" target="_blank" class=""><img src="Events/B.Tech_I_Year_Orientation_Programme_Preponed.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear B.Tech I Year Students & Parents-2020 Batch... First Year ORIENTATION PROGRAMME is PREPONED TO 9:00 AM on 25.11.2020(Instead of 10:30AM on 25.11.2020). The STUDENTS INDUCTION PROGRAMME(SIP) 2020 will start at 9:00AM on 26.11.2020(Thursday)."/></a>
+<a href="#" class=""><img src="Events/Orientation_Postponed1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Students, B. Tech. I Year ORIENTATION PROGRAMME is POSTPONED FROM 18.11.2020 TO 25.11.2020. Further, Student Induction Programme (SIP) will start on 26.11.2020"/></a> 
+<a href="#" target="_blank" class=""><img src="Events/B.Tech_I_Year_Orientation_Programme_Preponed.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear B.Tech I Year Students & Parents-2020 Batch... First Year ORIENTATION PROGRAMME is PREPONED TO 9:00 AM on 25.11.2020(Instead of 10:30AM on 25.11.2020). The STUDENTS INDUCTION PROGRAMME(SIP) 2020 will start at 9:00AM on 26.11.2020(Thursday)."/></a>
+<a href="academics/B.Tech. I Year-Internal Sliding.html" class=""><img src="Events/B.Tech_Internal_Sliding.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear FIRST YEAR students and parents - 2020 Batch FIRST YEAR ORIENTATION PROGRAMME is POSTPONED FROM 18.11.2020 TO 25.11.2020. The STUDENT INDUCTION PROGRAMME (SIP) WILL START ON 26.11.2020."/></a> 
+<a href="#" class=""><img src="Events/Orientation_Postponed1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Students, B. Tech. I Year ORIENTATION PROGRAMME is POSTPONED FROM 18.11.2020 TO 25.11.2020. Further, Student Induction Programme (SIP) will start on 26.11.2020"/></a>
+<a href="academics/B.Tech. I Year-Internal Sliding.html" class=""><img src="Events/B.Tech_Internal_Sliding.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear FIRST YEAR students and parents - 2020 Batch FIRST YEAR ORIENTATION PROGRAMME is POSTPONED FROM 18.11.2020 TO 25.11.2020. The STUDENT INDUCTION PROGRAMME (SIP) WILL START ON 26.11.2020."/></a>
+
+<a href="Events/check_list.pdf" class=""><img src="Events/New_First_Year.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student,Hearty Congratulations on your admission to KITSW. We warmly welcome you to the KITSW."/></a>
+<a href="Events/checklist.pdf" class=""><img src="Events/New_First_Year.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student,Hearty Congratulations on your admission to KITSW. We warmly welcome you to the KITSW."/></a> 
+<a href="Events/checklist.pdf" class=""><img src="Events/New_First_Year.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student,Hearty Congratulations on your admission to KITSW. We warmly welcome you to the KITSW."/></a>
+<a href="Events/checklist.pdf" class=""><img src="Events/New_First_Year.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student,Hearty Congratulations on your admission to KITSW. We warmly welcome you to the KITSW."/></a>
+<a href="Events/checklist.pdf" class=""><img src="Events/New_First_Year.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Dear Student,Hearty Congratulations on your admission to KITSW. We warmly welcome you to the KITSW."/></a>
+--> 
+<!--<a href="#" class=""><img src="Events/Others/Premsingh Padya-31-10-2020.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>Prem Singh Padya B.Tech. CSE final year student has been recognised as 'Mentor for Central Government Mission GOAL 2.0' (31.10.2020)"./></a>-->
+
+<!--<a href="#" class=""><img src="Events/Others/ISO Certification-Photo.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>ISO HYM Managing Director, Sri. Alapati Shivaiah has handed over the ISO certificate to KITSW Secretary and Correspondent Capt.V.Lakshmikantha Rao garu in the presence of Principal Prof. K.Ashoka Reddy. (23.07.2020)"  /></a>
+<a href="#" class=""><img src="Events/DXC_webPoster-Final-1.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>145 Final Year Students of 2020-21 are selected in DXC Technology India Private Limited, Hyderabad, Telangana. (29.08.2020)"  /></a>
+
+<a href="#" class=""><img src="Events/DXC_webPoster-Final-2.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>145 Final Year Students of 2020-21 are selected in DXC Technology India Private Limited, Hyderabad, Telangana. (29.08.2020)"   /></a>
+<a href="#" class=""><img src="Events/TP/Congratulations 147.jpg" alt="" width="781" height="296" title="" rel="<h3>T & P - KITSW </h3><br>Greetings and best wishes from KITSW to all the 147 Students of 2021 Batch placed in DXC Technology India Private Limited, Hyderabad, Telangana. (29.08.2020)"   /></a>-->
+
+<a href="#" class=""><img src="Events/kitsw-faculty-recruitment20.gif" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>KITSW invites fresh candidates who completed / submitted Ph.D at IITs/NITs."  /></a>
+
+<a href="https://in.mathworks.com/academia/tah-portal/kakatiya-institute-of-technology-and-science-31448089.html
+" target="_blank" class=""><img src="Events/Matlab_webposter-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>MATLAB access for everyone at KITSW."  /></a>
+
+<a href="https://in.mathworks.com/academia/tah-portal/kakatiya-institute-of-technology-and-science-31448089.html
+" target="_blank" class=""><img src="Events/Matlab_webposter-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3><br>MATLAB access for everyone at KITSW."  /></a>
+
+<a href="#" class=""><img src="Events/images/covid-19-donation (1).jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW JOINED THE COVID-19 FIGHT WITH Rs. 38.0 Lakh Donation</h3></br>Shri. Vodithela Satish Kumar garu, MLA & Member, Ekashila Education Society handed over cheques to Shri. K.T. Rama Rao garu,  Minister of IT, Govt. of Telangana  on April 6, 2020.
+</br>
+Employees of KITSW:
+Rs. 7,78,871/-</br>
+Ekashila Education Society: 
+Rs. 25.0 Lakh</br>
+Manohara Education Society:
+Rs. 5.0 Lakh"  /></a> 
+
+<!--	 <a href="#" class=""><img src="Events/images/faculty_positions-new1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>KITSW looking for Fresh Doctorates from IITs and NITs. (05.08.2020)" /></a>-->
+<!--
+   <a href="#" class=""><img src="Events/ECE/icdect2020-brochure.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>International Conference on “Data Engineering and Communication Technology (ICDECT2020)” Brochure was launched by the Capt.V.Lakshmikantha Rao, M.P (RS),Secretary & Correspondent and Sri P.Narayana Reddy garu, Treasurer (08.07.2020)" /></a> 
+   <a href="#" class=""><img src="Events/ECE/icdect2020-poster.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>International Conference on “Data Engineering and Communication Technology (ICDECT2020)” Poster was launched by the Principal Prof. K. Ashoka Reddy. (09.03.2020)""  /></a>
+   <a href="#" class=""><img src="Events/ECE/Inauguration of Transfinite iLab- ECE.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Inauguration of Transfinite iLab (Centre of Execellence) in the Department of ECE on 8th February, 2020." /></a>
+   <a href="#" class=""><img src="Events/images/ictmae.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Our Proud Alumnus Sreeal Co-Founder Ms. A.Sahitya Raj appointed as Deputy Vice President, WEE, CIMSME|ICTMAE, Telangana State 02.04.2020." /></a>
+   <a href="#" class=""><img src="Events/TP/Congratulations 566.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3>Greetings and the best wishes from KITSW to all 566 students of 2020 Batch placed into various MNCs!!! (24.09.2020)"  /></a>
+   -->
+	 
+<!--      <a href="#" class=""><img src="Events/ECE/Inauguration-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Virtual Inaugural function of Center of Excellence(CoE) BLACKBUCK ENGINEERS in Association with Indian Society for Technical Education(ISTE), Chief Guest Anuradha Thota, CEO & Founder, BLACKBUCK ENGINEERS Pvt. Ltd. (16.07.2020)""  /></a>
+	 
+     <a href="#" class=""><img src="Events/ECE/Inauguration-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Virtual Inaugural function of Center of Excellence(CoE) BLACKBUCK ENGINEERS in Association with Indian Society for Technical Education(ISTE), Chief Guest Vishnu Kiran Tirumalasetty, Director of Product Innovation at Blackbuck Engineers Pvt. Ltd., Hyderabad, Telangana, India(16.07.2020)"  /></a>   
+ <a href="#" class=""><img src="Events/images/codevita1.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3>"  /></a>
+     <a href="#" class=""><img src="Events/images/codevita2.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3>"  /></a>	 	 
+	 
+     <a href="#" class=""><img src="Events/images/codevita3.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3>"  /></a>
+	 
+      <a href="#" class=""><img src="Events/Others/Goreti-Venkanna.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Sri Goreti Venkanna launches Studnet Activity Centre organized two day National level student Cultural carnival 'SANSKRITI-20' on 28th February, 2020. (28.02.2020)" /></a>
+   
+   <a href="#" class=""><img src="Events/ECE/Inauguration of TIIC- ECE.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Inauguration of Techonology Innovation & Incubation Centre by Sri Banda Prakash, Member of Parliament(Rajya sabha) in the Department of ECE on 8th February, 2020." /></a>   
+
+   <a href="#" class=""><img src="Events/ECE/4-ECE Seminar-DLEA.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Participants of DST-ICPS, New Delhi sponsored three day National Level Seminar on Deep Learning for Engineering Applications during 6th to 8th January, 2020." /></a>
+	 
+   <a href="#" class=""><img src="Events/CSE/Task Sponsored FDP-DDPSQL-Addressing Principal.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Addressing by the Principal Prof. K. Ashoka Reddy during TASK Sponsored one week Faculty Development Programme on Database Design and Programing with SQL from 24-29 February, 2020 organized by Dept. of IT and CSE. (24.02.2020)" /></a> 
+	 
+	<a href="#" class=""><img src="Events/CSE/CSE FDP-ETAI-Addressing Chief Guest.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the Chief Guest Dr. Sriram. G. Sanjeevi, Professor, Dept. of CSE, NIT, Warangal during DST(ICPS Division) Sponsored a three day National Level Seminar on Emerging Trends in Artificial Intelligence from 20-22 February, 2020 organized by Dept. of CSE. (20.02.2020)"  /></a>
+
+<a href="#" class=""><img src="Events/CSE/CSE FDP-ETAI-Partcipants Group Photo.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Participants of three day National Level Seminar on Emerging Trends in Artificial Intelligence from 20th to 22nd February, 2020, sponsored by DST (ICPS Division) and Organized by CSE Department, during the inaugural function on 20.02.2020.
+Chief Guest: Dr. Sriram. G. Sanjeevi, NITW." (20.02.2020)"  /></a> 
+
+<a href="#" class=""><img src="Events/Others/SANSKRITI-Poster Launched.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>National level student cultural fest 'SANSKRITI-20' Poster was launched by the Principal Prof. K. Ashoka Reddy. (18.02.2020)"  /></a>
+
+    <a href="#" class=""><img src="Events/Others/71-Republic Day-2020 Celebrations.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Addressing by the Principal Prof. K. Ashoka Reddy during Seventy first (71) Republic day celebrations at KITS Warangal on 26.01.2020 (Sunday)" /></a> -->
+	 
+<!--	 <a href="#" class=""><img src="Events/Others/NCC Cadet - KITSW-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-NCC </h3>NCC Senior Cadet P.GOPICHANDER of Mechanical Engg. final year student congratulated by Principal Prof. K.Ashok Reddy for receiving Master of ceremony Award, presented by Arunachal Pradesh Governer Brig. B.D.Mishra during the NCC Camp. (21.01.2020)"  /></a>
+	 
+	 <a href="#" class=""><img src="Events/Others/NCC Cadet - KITSW-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-NCC </h3>NCC Senior Cadet P.GOPICHANDER of Mechanical Engg. final year student congratulated by Principal Prof. K.Ashok Reddy for receiving Master of ceremony Award, presented by Arunachal Pradesh Governer Brig. B.D.Mishra during the NCC Camp. (21.01.2020)"  /></a> 
+
+	 <a href="#" class=""><img src="Events/Others/NCC Cadet - KITSW-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-NCC </h3>NCC Senior Cadet P.GOPICHANDER of Mechanical Engg. final year student receiving trophy for Master of ceremony and NIEP first place by Camp commandment and other Army officials during EK BHARAT SHRESTHA BHARAT CAMP in Arunachal Pradesh. (17.01.2020)"  /></a>   -->
+	 	 
+	 <!-- <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the Capt.V.Lakshmikantha Rao, M.P (RS),Secretary & Correspondent during 36th Graduation day at KITS Warangal. (21.12.2019)" /></a>  -->
+
+<!--     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the cheif guest  Dr. B. Janardhan Reddy, IAS during 36th Graduation day at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-3.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the guest of honour Prof S.Mahender Reddy , Controller of Examinations , KU,Warangalduring 36th Graduation day at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-4.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Addressing by the Tresurer Shri P.Narayana Reedy Garu  during 36th Graduation day at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-5.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Chairman, Governing Body, KITSW, Dr A.MurthyRaju declaring the  36th Graduation day open at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-6.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Ekashila Education Society members honouring to Late Justice V. Madhava Rao founder chairman during the 36th Graduation Day at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-7.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Ms P. Ujwala, B.Tech ME receiving overall academic excellence award from the chief guest. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-8.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Pledge by KITSW graduants during 36th Graduation day held at KITS Warangal. (21.12.2019)" /></a> 
+
+     <a href="#" class=""><img src="Events/Others/GraduationDay-2019/graduationday-2019-9.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>The cheif guest  Dr. B. Janardhan Reddy, IAS With the guests on the dais during the pledge at 36th Graduation day at KITS Warangal. (21.12.2019)"  /></a> 
+
+     <a href="#" class=""><img src="Events/Others/EEE RAEE-9 December, 2019.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-EEE</h3>Participants of one week workshop on Recent Advances in Electrical Engineering-2019 from 9th to 14th December, 2019, sponsored by ISTE and Organized by EEE Department, during the inaugural function on 9.12.2019.
+Chief Guest: Prof. D.M. Vinod Kumar, NITW."  /></a> -->
+	  	 
+<!--  
+	 <a href="#" class=""><img src="Events/Others/CSE-FDP-Jan9-22.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Cheif guest Prof. N. V. Ramana Rao, Director, NIT Warangal during the inaugural of AICTE sponsored FDP held at KITS Warangal. (09.01.2020)"  /></a>	 
+	 
+	 <a href="#" class=""><img src="Events/Others/NAC Vistited our Campus.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3> Visit of Mr. Raji Reddy Director, CDI-National Academy of Construction and their team with Eminent Professor K. Purushotham Reddy OU, Environmental Scientist to the Department of Civil Engineering. (03.01.2020)"  /></a>
+
+     <a href="#" class=""><img src="Events/Others/2-SWAYAM-NPTEL Toppers Jul-Dec 2019.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Hearty congratulations to the Toppers in SWAYAM-NPTEL July - December, 2019 semester" /></a>
+
+     <a href="#" class=""><img src="Events/Others/Proud Alumnus-KITSW.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Our Proud Alumnus Shri SUHAS YERRA(Class of 1991 CE), a proud and distinguished Alumnus received CIO of THE YEAR CHARLOTTE ORBiE AWARD for 2018." /></a> 
+
+   <a href="#" class=""><img src="Events/ECE/4-ECE Seminar-DLEA.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-ECE</h3>Participants of DST-ICPS, New Delhi sponsored three day National Level Seminar on "Deep Learning for Engineering Applications" during 6th to 8th January, 2020." /></a>
+
+     <a href="#" class=""><img src="Events/Others/FDP-MED-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-MED</h3>A One Week ISTE & Adroitec sponsored Faculty Development Program (FDP) on DISRUPTIVE TECHNOLOGIES IN DIGITAL MANUFACTURING (DTM-19) organized during 25– 29 NOVEMBER, 2019." /></a> 
+
+     <a href="#" class=""><img src="Events/Others/FDP-MED-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-MED</h3>A One Week ISTE & Adroitec sponsored Faculty Development Program (FDP) on DISRUPTIVE TECHNOLOGIES IN DIGITAL MANUFACTURING (DTM-19) organized during 25– 29 NOVEMBER, 2019." /></a> 
+
+     <a href="#" class=""><img src="Events/Others/Alumni-Walamtari.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Our Proud Alumnus Shri Z.SRINIVASA RAO (Class of 1986 Civil Engg.), is appointed as DIRECTOR GENERAL of WALAMTARI, Hyderabad on 02.12.2019." /></a> 
+
+   <a href="#" class=""><img src="Events/Others/FDP-IoT-Poster Release.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-CSE</h3>FDP Poster Release: Department of CSE organizing DST, New Delhi sponsored a Two Week FDP on  Advances in Internet of Things during 12th-22nd December, 2019(02.12.2019)." /></a> -->
+
+<!--     <a href="#" class=""><img src="Events/Others/Alumni-DMRL.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Our Proud Alumnus Dr.G.MADHUSUDAN REDDY (Class of 1985 ME), SCIENTIST-H at DMRL, is appointed as DIRECTOR, DMRL, Hyderabad on 29.11.2019." /></a> 
+
+     <a href="#" class=""><img src="Events/Others/iaahp lab-1.jpg" alt="" width="781" height="296" title="" rel="<h3>IAAHP, KITSW, Team</h3>High end 3D Printer installed: Mark Forged Mark Two - 3D Printer was installed in IAAHP lab and the first components are produced on  08/11/2019   for Indo- American Artificial Heart Project in colloboration with Univerisity of Pittsburgh  Medical Center (UPMC) and Cornell Univeristy." /></a> 
+     <a href="#" class=""><img src="Events/Others/VCR PhD.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Dr. V. Chandra Shekhar Rao Received appreciation from TS Governor Her excellency Dr. Tamilisai Soundararajan for Indian Youth Red Cross Society activities at our KITS , in an event organised at Raj Bhavan." /></a> 
+     <a href="#" class=""><img src="Events/Others/VAW-2019.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>The Industry Institute Interaction Cell (IIIC) of the Institute is organizing 'Vigilance Awareness Week-2019', sponsored by M/s Power Grid Corporation of India Ltd., (PGCIL), from 28.10.2019 to 02.11.2019 on the theme'Integrity- A way of life (ईमानदारी-एक जीवन शैली)' at KITS Warangal." /></a>
+      <a href="#" class=""><img src="Events/Others/Prem Singh.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Third year CSE student Prem Singh padya(B17CS158) received KARMA VEERA CHAKRA Award and Global Young Leader Fellowship(GYLF) at IIT Delhi on 12th October, 2019 from iCONGO(The Indian Confederation of NGO's) associated with United Nations(UN)" /></a>
+	  
+<!--    <a href="#" class=""><img src="Events/Others/2-10-19/1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Prof K.V Raghu Babu being felicitated on his superannuation by Principal and Dean Admin  on 30.09.2019.)" /></a>
+    <a href="#" class=""><img src="Events/Others/2-10-19/2.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Smt CH.Navitha, Assistant Professor, Dept of ECE being felicitated on her relieving  from the institute on 30.09.2019." /></a>
+    <a href="#" class=""><img src="Events/Others/2-10-19/DSC_1497.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>SUPERANNUATION FUNCTION: Staff Club felicitating Prof. K.V.Raghu Babu, Head,  Dept. of Physical Sciences, on the occasion of his superannuation on 30th September, 2019." /></a> 
+
+    <a href="#" class=""><img src="Events/Others/27-9-19/Gbm1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Members in Governing Body Meeting (Date 14.09.2019)" /></a>
+     <a href="#" class=""><img src="Events/Others/27-9-19/gbm2.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3> Governing Body Members  (Date 14.09.2019)" /></a>
+       <a href="#" class=""><img src="Events/Others/27-9-19/tcs pic1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Sri Rajanna Garu, Vice President & Regional Head TCS, Captain. V. Laxmikantha Rao Garu, Secretary and Correspondent, Rajyasabha (MP), Principal Dr. K. Ashoka Reddy garu, Dr. Ramesh Reddy Garu, Dean Admin and 122 TCS Selected Students (19.09.2019)" /></a>
+    <a href="#" class=""><img src="Events/Others/27-9-19/tcs pic2.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Sri Rajanna Garu, Vice President & Regional Head TCS, Captain. V. Laxmikantha Rao Garu, Secretary and Correspondent, Rajyasabha (MP), Governing Body members and T&P Team with 122 TCS Selected Students (19.09.2019)" /></a>
+     <a href="#" class=""><img src="Events/Others/27-9-19/Congratulations 2020.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the students placed into various MNCs!!!  " /></a>
+      <a href="#" class=""><img src="Events/Others/27-9-19/Mphasis.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Miss. Shruthi  Khaple (HR Mphasis) & Team, Dr. P. Srikanth Prof I/c T&P Cell and Team with 53 selected students." /></a>
+      <a href="#" class=""><img src="Events/Others/27-9-19/Ad3i.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Mr. Kirit Kumar (Delivery Manager Ad3i), Alekhya Polsani (HR Ad3i), Mr. Bhargav (IT Director Ad3i) and Dr. P. Srikanth Prof. I/c T&P Cell and Team with all the Selects." /></a>
+       <a href="#" class=""><img src="Events/Others/27-9-19/Hexaware.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Miss Sakshi (HR Hexaware) and Team, Dr. P. Srikanth Prof. I/c T&P Cell and Team with all the Selects." /></a>
+        <a href="#" class=""><img src="Events/Others/27-9-19/GE Digital.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Mr. Sravanan (DM GE Digital), Mr. Shiva and Miss. KVN Sharavani proud alumni of KITSW ( Tech HR), Principal Dr. K. Ashoka Reddy garu, Prof I/c T&P Cell  Dr. P. Srikanth & Team, Head of CSE Dr. N. Niranjan Reddy  witn GE Selected students." /></a>
+         <a href="#" class=""><img src="homepage_pages/26-9-19/img-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>KITSW RPA BOT Lab inauguration" /></a>
+         
+     <a href="#" class=""><img src="homepage_pages/26-9-19/img-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Blood donation camp organized by NSS at KITS Warangal on 24.09.2019." /></a>
+    <a href="#" class=""><img src="Events/Others/Sae2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>KITSW MECHANICAL ENGINEERING TEAM 'FORCE RACING' GOING TO BE PARTICIPATING IN UPCOMING EVENT OF 'FFS INDIA-2019',AT KARI MOTOR SPEEDWAY , COIMBATORE FROM 28TH SEP-3 OCT 2019." /></a>
+    <a href="#" class=""><img src="Events/Others/IMG-20190915-WA0206.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>BASKET BALL KU INTER-COLLEGE TOURNAMENTS (W) WINNERS" /></a>
+     <a href="#" class=""><img src="Events/Others/IMG-20190926-WA0007.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Rally conducted by KITSW NCC on awareness of eradication of plastic" /></a>
+     <a href="#" class=""><img src="Events/Others/26-9-19.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Sumshodhini-19 A National Level Technical Students Symposium Poster Released by Capt.V.Lakshmikantha Rao Garu ,Secretary & Correspondent , MP (Rajya Sabha) , Dr.K.Ashoka Reddy Garu, Principal ,Faculty and Students.(25.09.2019)" /></a>
+    <a href="#" class=""><img src="Events/Others/18-9-19_img-2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>TASK-KITSW MoU: Mr. M.Ramakrushan, RM-TASK Warangal is handing over Partnering Institute Certificate to Prof. K. Ashoka Reddy, Principal-KITSW. (Date.04.09.2019)" /></a>
+     <a href="#" class=""><img src="Events/Others/18-9-19_img-1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3> Cisco Certified Instructors: Appreciations to Mr. D.Ramesh and Mr. V. Prasad on successfully completing Cisco Networking Academy Routing & Switching (Module 1 & Module 2) with Merit Certificate. (Date.04.09.2019)  " /></a>
+      <a href="#" class=""><img src="Events/Others/16-9-19.jpg" alt="" width="781" height="296" title="" rel="<h3>Dept.of ME</h3>Congratulations to Mr. T.Lavanith of final year Mechanical engineering student for presenting a paper at TFAWS-NASA international conference held at virginia, USA on 27.08.2019." /></a>-->
+	  <!--  <a href="#" class="show"><img src="Events/Others/19-8-19.jpeg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>.
+Hearty Congratulations to our faculty on receiving Ph.D degrees from prestigious NITW. Dr.M.Srikanth, Assoc.Professor, Dept.of CE, Dr.D.Abhignya, Asst.Professor,Dept.of CE,Dr.Anil Pinapati,Asst.Professor, Dept.of CSE.(17.08.2018)" /></a>
+   <a href="#" class=""><img src="Events/Others/7-8-19-oreitation.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Felicitation to Sri Barupati Gopi, Psychologist, Motivator and Book Writer during Induction Programme for B.Tech I year Students on 07.08.2019 (Wednesday)" /></a>
+    <a href="#" class=""><img src="Events/Others/orientation-program.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Address by Prof. K. Ashoka Reddy, Principal during Orientation Programme for B.Tech I year students on 02.08.2019 (Friday)" /></a>
+<!--     <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all 513 students placed into various MNCs!!! " /></a> 
+     <a href="#" class=""><img src="Events/Others/yog day pic1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>5th International Yoga day celebrations at KITSW, Auditorium on 21-06-2019" /></a>
+      <a href="#" class=""><img src="Events/Others/yoga day pic2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>5th International Yoga day celebrations at KITSW, Auditorium on 21-06-2019" /></a>
+  
+<!--       <a href="#" class=""><img src="Events/Others/27-6-19/swayam-goldmedalwinners.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Hearty congratulations to the Toppers and Gold Medalists in SWAYAM-NPTEL Jan-Jun 2019 semester" /></a> -->
+
+<!-- CONTENT DISABLED ON 27-DEC-2019
+      <a href="#" class=""><img src="Events/Others/11-6-19/pic1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Principal Dr K Ashoka Reddy addressing the gathering on the inaugural session of FDP on Student Induction.Date:16.05.2019 " /></a>
+       <a href="#" class=""><img src="Events/Others/11-6-19/pic 2.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Dr Ramesh Unnikrishnan, Director AICTE-SCRO Hyderabad addressing the gathering  on the inaugural session of  FDP on Student Induction.Date:16.05.2019 " /></a>
+      
+    <a href="#" class=""><img src="Events/Others/selected-501.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>(Total 513 selected students in various companies with college Dean Administration Dr. P. Ramesh Reddy, Dean T&P Prof. Y. Purandar, TPO Dr. P. Srikanth and all the HOD's of KITS, Warangal)." /></a>
+    <a href="#" class=""><img src="Events/Others/Infosys-selectees.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Infosys. ( Infosys selected students with Dean Administration Dr. P. Ramesh Reddy, Dean T&P Prof. Y. Purandar, TPO Dr. P. Srikanth and all the HOD's of KITS, Warangal)." /></a>
+    <a href="#" class=""><img src="Events/Others/wipro-selectees.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Wipro. ( Wipro selected students with Dean Administration Dr. P. Ramesh Reddy, Dean T&P Prof. Y. Purandar, TPO Dr. P. Srikanth and all the HOD's of KITS, Warangal)." /></a>
+    <a href="#" class=""><img src="Events/Others/TCS-Selctees.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>TCS. ( TCS selected students with Dean Administration Dr. P. Ramesh Reddy, Dean T&P Prof. Y. Purandar, TPO Dr. P. Srikanth and all the HOD's of KITS, Warangal)." /></a>
+    <a href="#" class=""><img src="Events/Others/8-5-19-1.jpg" alt="" width="781" height="296" title="" rel="<h3>CIVIL Engg.</h3>Civil Engineering Conference-SPACE-2019, Inaugral ceremony, Chief Guest Dr.Ratish Kumar, Professor NIT Warangal." /></a>
+     <a href="#" class=""><img src="Events/Others/8-5-19-2.jpg" alt="" width="781" height="296" title="" rel="<h3>CIVIL Engg.</h3>Release of Conference Proceedings,Dr.P.Ratish Kumar, Professor,NITW, Dr.L.Sudheer Reddy, Professor and Head, Dr.M.Srikanth, Organising Secretary SPACE2019, Sri.K.Srujan Varma, Coordinator, Sri.B.Sai Laxman, Coordinator." /></a>
+      <a href="#" class=""><img src="Events/Others/ICSSR.jpg" alt="" width="781" height="296" title="" rel="<h3>MBA Department</h3>ICSSR Sponsored National Seminar on Digital India : Initiative towards Social Transformation & Empowerment launched by Rajya Sabha MP, KITSW Secretary & Correspondent Capt. V. Lakshmikantha Rao  in Association with Department of Management" /></a>
+
+CONTENT DISABLED ON 27-DEC-2019 -->
+   
+<!--    <a href="#" class=""><img src="Events/Others/29-3-19/pic1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-NSS</h3>Blood Donation Camp  in KITSW in association with India Red Cross Society Warangal. Date:29.03.2019" /></a>
+   <a href="#" class=""><img src="Events/Others/29-3-19/pic2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-NSS</h3>Principal, Faculty and Students in Blood Donation Camp, KITSW organized in association with India Red Cross Society Warangal. Date:29.03.2019" /></a>
+<!--    <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!!" /></a> -->
+<!--    <a href="#" class=""><img src="Events/Others/EIworkshop.jpeg" alt="" width="781" height="296" title="" rel="<h3>E&I Engg.</h3>FDP Poster Release: Department of Electronics & Instrumentation Engineering organizing A One Week FDP on  VLSI Design:Building Concepts to Practice during 25th-29th March 2019." /></a>
+   <a href="#" class=""><img src="Events/Others/DSC_0483.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>At Sanskrithi-19, Chief guest Vinod Lingala, Film director, Arjun Guru illusionist, Capt.V.LakshikanthaRao Garu, Secretary, KITSW, Sri P.Narayana Reddy garu, Treasurer, Sri Ram Reddy Garu, Member, Dr.Ashoka Reddy, Principal & others releasing the souvenir(1-2 Mar,2019).
+" /></a>
+<!--     <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a> -->
+<!--     <a href="#" class=""><img src="Events/Others/Poster.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-SAC</h3>A National Level student cultural festival  SANSKRITI-19 poster.
+" /></a> 
+ 
+ <a href="#" class=""><img src="Events/Others/Sanskrithi 1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW-SAC</h3>A National Level student cultural festival  SANSKRITI-19 poster released by Principal Prof. K.Ashoka Reddy, Deans, HODs , Faculty and Student Coordinators of SAC.
+" /></a> 
+         <a href="#" class=""><img src="Events/Others/khel.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>M.Manjunath Yadav, B.Tech – I Year  Mech. has Represented in Telangana State Judo Team at Khelo India  Youth Games  held at Pune,Maharastra  from 08.01.2019 to 14.01.2019.
+" /></a> 
+       
+<!--          <a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo1.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Chief Guest Prof. K. Purushotham garu, Registrar, Kakatiya University addressing the gathering during 35th Graduation Day conducted on 29.12.2018
+" /></a>
+ <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo2.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Chairman Dr. Alluri Murthy Raju garu giving message to Graduands on the occasion of 35th Graduation Day on 29.12.2018.
+" /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo3.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Address by Capt. V. Lakshmikantha Rao garu, Secretary & Correspondent addressing the Graduands during 35th Graduation Day conducted on 29.12.2018.
+" /></a>
+ <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!!" /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo4.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Treasurer Sri  P. Narayana Reddy garu addressing the Graduands during 35th Graduation Day conducted on 29.12.2018.
+" /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo5.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Principal Dr. K. Ashoka Reddy garu addressing the gathering during 35th Graduation Day conducted on 29.12.2018.
+" /></a>
+ <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo6.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Gold Medal Winners of the First Autonomous Batch of B.Tech programmes – Class of 2018 – along with Academic Advisory Committee Members during 35th Graduation Day on 29.12.2018.
+" /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo7.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Academic Merit Award Winners of B.Tech, M.Tech & MBA programmes of Class of 2018 with AAC members during 35th Graduation Day on 29.12.2018.
+" /></a>
+ <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!!" /></a>
+<a href="#" class=""><img src="Events/Others/GraduationDay2018-19/photo8.JPG" alt="" width="781" height="296" title="" rel="<h3>GRADUATION DAY</h3>Taking of Pledge by B.Tech, M.Tech & MBA Graduands of Class of 2018 during the 35th Graduation Day on 29.12.2018." /></a>
+
+<a href="#" class=""><img src="Events/Others/Image 122dec18.JPG" alt="" width="781" height="296" title="" rel="<h3> Alumni Meet </h3>Jyothi Prajwalana by
+Chief Guest Sri Akula Rajith Kumar, President KITSWAA & CEO, Iyuga Consultancy, Hyderabad. Guest of  Honour Sri Z Srinivas Rao, Superintendent. Engineer, Chinthagattu Camp, Warangal, Treasurer Sri P. Narayana Reddy gaaru,  & Principal Prof.K.Ashoka Reddy on the occasion of Alumni Meet and Silver Jubilee Reunion (Class of 1993) on 22/12/2018.
+" /></a>
+<!-- <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a> 
+           <a href="#" class=""><img src="Events/Others/Image 2_22dec18.JPG" alt="" width="781" height="296" title="" rel="<h3> Alumni Meet </h3>Principal Dr. K. Ashoka Reddy addressing the gathering during the Alumni Meet and Silver Jubilee Reunion (Class of 1993) conducted on 22/12/2018" /></a>
+            <a href="#" class=""><img src="Events/Others/Image 3_22dec18.JPG" alt="" width="781" height="296" title="" rel="<h3> Alumni Meet </h3>Felicitation to the Senior most Alumni - Teacher of the Institute Prof. K. Sivani by the Management and Principal during the Alumni Meet conducted on 22/12/2018." /></a>
+         
+          <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a> -->
+       
+ <!--         <a href="#" class=""><img src="Events/Others/29-11-18.jpg" alt="" width="781" height="296" title="" rel="<h3> KITSW </h3>Presentation of Certificate of Appreciation to TASK Student Ambassadors on 19-November-2018" /></a>
+           
+           <a href="#" class=""><img src="Events/Others/27-11-18.jpg" alt="" width="781" height="296" title="" rel="<h3> KITSW </h3>Prof. Shukla and Prof. Srivasthav of Lucknow University visited campus on 25.11.2018" /></a>
+           
+         <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a>
+      
+            <a href="#" class=""><img src="Events/Others/8-11-18_4.jpg" alt="" width="781" height="296" title="" rel="<h3>IIIC, KITSW </h3>Prof. K. Ahoka Reddy, Principal, KITSW & Prof. V.Ramaiah, Prof. I/c, I3C, KITSW group photo with Ch. Rupesh, IPS-2017, Sri. J.Anjaneyulu, Senior Deputy General Manager, PGCIL, & Sri. M.Ramachandram, Chief Manager, PGCIL, Dated 03.11.2018." /></a>
+                    
+             <a href="#" class=""><img src="Events/Others/8-11-18.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Expert talk on ' Pursuit of Academic Excellence' by Prof. M. Chidambaram, NIT Warangal on 27/10/2018 and organized by ETC of KITSW. Prof. K. Ashoka Reddy, Principal, presented a memento to Prof. M. Chidambaram as a mark of respect. ETC faculty Prof. A. Srihari Rao and Dr. U. Shrinivas Balraj were also present. " /></a>
+          
+          <a href="#" class=""><img src="Events/Others/5-11-18.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>NAAC peer team visited the institute during 28-29 September, 2018" /></a>
+                    
+          <a href="#" class=""><img src="homepage_pages/SUMSHODHINI18 Inaugural.JPG" alt="" width="781" height="296" title="" rel="<h3>SUMSHODHINI18</h3>SUMSHODHINI18 Inaugural by Sri V.P. Gautam, IAS, Commissioner, GWMC, Warangal, Sri M. Sheshagiri Rao, AGM, BDL, Hyderabad & Dr. Alluri Murty Raju, Chairman , Governing body, KITSW, Dr. K. Ashoka Reddy, Principal, Dr. K. Sridhar, Dean, Student Affairs (05-10-2018)"/></a>
+          
+           <a href="#" class=""><img src="homepage_pages/Release of SUMSHODHINI18  souvenir.JPG" alt="" width="781" height="296" title="" rel="<h3>SUMSHODHINI18</h3>Release of SUMSHODHINI18  souvenir by Sri V.P. Gautam, IAS, Commissioner, GWMC, Warangal, Sri M. Sheshagiri Rao, AGM, BDL, Hyderabad & Dr. Alluri Murty Raju, Chairman , Governing body, KITSW, Dr. K. Ashoka Reddy, Principal, Dr. K. Sridhar, Dean, Student Affairs (05-10-2018)"/></a>
+           
+           <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a>  
+            
+ <!--            <a href="#" class=""><img src="Events/Others/sumsh2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Sumshodhini'18 a National level technical symposium poster released by Treasurer Sri K.Naraya Reddy Gaaru"/></a>
+           <a href="#" class=""><img src="Events/Others/6-9-18_1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3>Congratulations to the students, for getting selected in Mphasis IT Service Management Company, Bangalore"/></a>
+ <a href="#" class=""><img src="Events/Others/6-9-18_2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW T&P</h3> Congratulations to the students Voddineni Akarsha (CSE), Thota Yashwanth (CSE), Juluri suchith kumar (CSE), Vangala Sairam (CSE) &  U Gurunag Sai (ECE) for getting selected in GGK Technologies, Hyderabad"/></a>
+
+ <a href="#" class=""><img src="Events/Others/image 2.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW-NSS</h3>Tree plantation conducted on 28-08-2018. Event inaugurated by Principal Dr. K. Ashoka Reddy. NSD Program Officers V.Chandra Shekhar Rao, and Y. Bhavani.around 200 trees planted."/></a>
+ <a href="#" class=""><img src="Events/Others/Slide1.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Greetings and the best wishes from KITSW to all the 513 students placed into various MNCs!!! " /></a>
+      
+           <a href="#" class=""><img src="Events/Others/31-8-2018/PIC 2.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW </h3>Independence day Celebrations in Campus."/></a>
+            <a href="#" class=""><img src="Events/Others/Alumni_Meet_Civil_First_Batch.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW ALUMNI</h3>Our proud first batch (1980-84) Civil Engineering alumni visited institute on 25th August 2018."/></a>
+           <a href="#" class=""><img src="Events/Others/image2_acheron.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Acheron Team With The Selected Students.Hr Team V Sathvika ,  T Laxmi Sindhuja,   Dr. Srikanth P, Prof I/C T&P Cell &  B Santhosh Kumar"/></a>
+            <a href="#" class=""><img src="Events/Others/Image2_ValueLabs.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Value Labs Team and KITWS T&P Team with The Selected Students. P. Anvesh Kumar, E. Kiran Kumar, Dr. Srikanth P, Value Labs Team, R. Gautam, P. Srinivas, Prithvi Raj,  S. Sai Surekha,  V. Sindhuja Reddy And  Prasanna Sai Chandragiri."/></a>
+             <a href="#" class=""><img src="Events/Others/13-8-18/pic 1.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Director NITW  Prof. N.V. Ramana Rao being received by our beloved Treasure Sri.P.Narayana Reddy on 8th Aug 2018"/></a>
+           <a href="#" class=""><img src="Events/Others/13-8-18/pic 2.jpg" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Indo- American Artificial Heart Project(IAAHP):  Dr. P S Reddy, Professor of Medicine, University of Pittsburg, USA with members of the project and Secretary & Correspondent Capt. V. Lakshmikantha Rao gaaru,  Treasure Sri.P.Narayana Reddy, Principal Dr. K. Ashoka Reddy gaaru on Aug 4, 2018.  "/></a> 
+          <a href="#" class=""><img src="Events/Others/20-7-18.JPG" alt="" width="781" height="296" title="" rel="<h3>KITSW</h3>Expert Talk on 'Research Preparedness' by our proud alumnus  Prof. V. Ramgopal Rao (Class of 1982-86, E&I ) Director, IIT Delhi, Conducted by Alumni Affairs on 11/07/2018 "/></a>
+           <a href="#" class=""><img src="Events/Others/20-06-18.jpg" alt="" width="781" height="296" title="" rel="<h3>T&P : KITSW</h3>Columbus pool campus drive: HR Manager Miss Sushmita,
+Product Manager Mr.Uday, Director Y.Manohar, T&P Officer Dr.Pabba Srikanth."/></a> -->
+
+	<div class="caption"><div class="content"> </div>
+</div>
+</div>
+</div>
+</div>
+	
+	
+	<div class="clear"></div>
+    <div id="ticker_container" >
+  <div>
+    <div id="start">
+      <p>
+        <script type="text/javascript">// <!--
+var pWidth = 700;
+var speed = 2;
+function getElementsByTagNames(list,obj) {
+  if (!obj) var obj = document;
+  var tagNames = list.split(',');
+  var resultArray = new Array();
+  for (var i=0;i<tagNames.length;i++) {
+    var tags = obj.getElementsByTagName(tagNames[i]);
+    for (var j=0;j<tags.length;j++) {
+      resultArray.push(tags[j]);
+    };
+  };
+  var testNode = resultArray[0];
+  if(!testNode){
+    return [];
+  };
+  if(testNode.sourceIndex){
+    resultArray.sort(function(a,b){
+      return a.sourceIndex - b.sourceIndex;
+    });
+  }else if(testNode.compareDocumentPosition){
+    resultArray.sort(function(a,b){
+      return 3 - (a.compareDocumentPosition(b) & 6);
+    });
+  };
+  return resultArray;
+}
+
+function init(){
+  var div = document.getElementById("marquee_replacement");
+  div.style.overflow = 'hidden';
+
+  var ps = getElementsByTagNames('p',div);
+  for(var j=0;j<ps.length;j++){
+    pWidth += ps[j].offsetWidth;
+  }
+
+  var startdiv = document.getElementById("start");
+  startdiv.style.width = pWidth+'px';
+  div.scrollLeft = 0;
+  startit();
+}
+
+var go = 0;
+var timeout = '';
+
+function scrollFromSide(){
+  clearTimeout(timeout);
+  var el = document.getElementById("marquee_replacement");
+  if(el.scrollLeft >= pWidth-950){
+    el.scrollLeft = 0;
+  };
+  el.scrollLeft = el.scrollLeft+speed;
+  if(go == 0){
+    timeout = setTimeout("scrollFromSide()",10);
+  };
+}
+
+function stop(){
+  go = 1;
+  timeout = '';
+}
+
+function startit(){
+  go = 0;
+  scrollFromSide();
+}
+init();
+// -->
+        </script>
+<marquee direction="left" scrollamount="5" onMouseOver="this.setAttribute('scrollamount', 0, 0);" onMouseOut="this.setAttribute('scrollamount', 5, 0);">
+
+<!--<span class="style21" style="color: #FF0"> &nbsp;&nbsp; The Institute will remain closed on 10th September, 2021 (Friday) on account of  "Vinayaka Chaturthi".</span>-->
+<span class="style21" style="color: #FF0">*</span><span class="style21" style="color: #FF0">Attention: All the Students, submit the COVID-19 vaccination certificate. If not, get vaccinated - Commencement of academic activities in physical mode from 01.09.2021. <a href="homepage_pages/submission of COVID-19 vaccination certificate.pdf" target="_blank">Click here</a> for more details. </span>
+
+
+<!--<span class="style21" style="color: #FF0">**</span><span class="style21" style="color: #FF0">As per the directions given by the Government of Telangana and the Kakatiya University, Warangal the institute will remain close from 14.10.2019 to 19.10.2019. The institute will re-open on 21.10.2019. However, for the FINAL YEAR STUDENTS, the Campus Recruitment Training (CRT) sessions and recruitment drives will be conducted as per the schedule </span>
+
+<span class="style21" style="color: #FF0">1. </span><span class="style21" style="color: #FF0">The Institute will remain closed on 1st January, 2019 (Wednesday) on account of  "New Year Day".</span> 
+
+<span class="style21" style="color: #FF0">1. </span><span class="style21" style="color: #FF0">The Institute will remain closed on 7th February, 2020 (Friday) on account of "Sammakka & Saralamma Jatara, 2020". However, in lieu of the above holiday 11th July, 2020 (2nd Saturday) will be the full working day.</span> -->
+
+<!-- SPOT Admission  
+<span class="style21" style="color: #FF0">&nbsp;&nbsp; ** Attention: Spot Admissions - Lateral Entry, <a href="Events/ECET-2020 Spot Admission.pdf" target="_blank">"Details of SPOT ADMISSIONS LATERAL ENTRY ON 15.10.2020 at 10.00 A.M."</a>.</span>
+<span class="style21" style="color: #FF0">&nbsp;&nbsp; ** Attention: Spot Admissions - Lateral Entry, <a href="Events/ECET-2020 Spot Admission.pdf" target="_blank">"Details of SPOT ADMISSIONS LATERAL ENTRY ON 15.10.2020 at 10.00 A.M."</a>.</span>
+<span class="style21" style="color: #FF0">&nbsp;&nbsp; ** Attention: Spot Admissions - Lateral Entry, <a href="Events/ECET-2020 SPOT ADMISSION.pdf" target="_blank">"Details of SPOT ADMISSIONS LATERAL ENTRY ON 15.10.2020 at 10.00 A.M."</a>.</span>
+<span class="style21" style="color: #FF0">&nbsp;&nbsp;&nbsp;  * <a href="ROLLING ADVERTISEMENT FOR FACULTY POSITIONS.pdf"  target="_blank"><span class="style21" style="color: #FF0">click here</span></a> for ROLLING ADVERTISEMENT FOR FACULTY POSITIONS</span>
+
+<span class="style21" style="color: #FF0">The Insitute will remain closed on 14th November, 2020 (Saturday) on account of  "Deepavali".</span>
+
+<span class="style21" style="color: #FF0"> &nbsp;&nbsp; | &nbsp; Dear Students, B.Tech I Year 2020 Batch…INTERNAL SLIDING... 1. INSTRUCTIONS LINK (<a href="Events/B.Tech._sliding_notice-2020.pdf" target="_blank">Click Here</a>). 2. ONLINE REGISTRATION LINK: <a href="https://forms.gle/U2MEgGJfchyBZkDR9" target="_blank">Click Here</a></span>
+<span class="style21" style="color: #FF0"> &nbsp; | Orientation programme, Student Induction Programme (SIP)/ Universal Human Values–I (UHV–I) programme & Commencement of class work through Virtual mode schedule – For all the B.Tech. I semester students admitted for the A.Y. 2020-21 <a href="homepage_pages/CIRCULAR for ACTIVITY & SIP2020SCHEDULEs for I year students of A.Y. 2020-21 (09112020).pdf" target="_blank">Click here </a>for schedule.</span>
+
+<span class="style21" style="color: #FF0">The Institute will remain closed on 25th & 26th December, 2020 (Friday & Saturday) on account of  "Christamas & Boxing Day".</span>-->  
+
+<!--<span class="style21" style="color: #FF0">The Institute will remain closed on 11th March, 2021 (Thursday) on account of  "Mahashivaratri". </span>
+
+<span class="style21" style="color: #FF0"><strong> &nbsp; | &nbsp; All the students of M.Tech. & M.B.A. I Semester are requested to check their <a href="examinations/M.Tech. and MBA I Sem Seating Arrangement.pdf" target="_blank">seating arrangement</a> for every examination.  </strong></span> 
+<span class="style21" style="color: #FF0">The II-Semester Class work for B.Tech. Programme of A.Y. 2020-21 will commence on April 19,2021(Monday). Stream-I ONLINE Classwork Time Table (<a href="../homepage_pages/Classworktimetables/2020-21/ONLINE CLASSWORK TIMETABLE for the STREAM-I EVEN SEMESTER.pdf" target="_blank">Click Here</a>) , Stream-II ONLINE Classwork Time Table (<a href="../homepage_pages/Classworktimetables/2020-21/ONLINE CLASSWORK TIMETABLE for the STREAM-II EVEN SEMESTER.pdf" target="_blank">Click Here</a>). </span>
+
+<span class="style21" style="color: #FF0"><img src="../homepage_pages/download-1.gif" alt="" width="25" height="25"/><strong> ESE-Fee Notification for UG & PG-May-2021 <a href="../homepage_pages/ESE-Fee Notification for UG & PG-May-2021 (27.04.2021).pdf" target="_blank">Click Here</a></strong></span> 
+
+<span class="style21" style="color: #FF0"><strong>  As per the Orders of Collector & District Magistrate (Warangal Urban District) the Institute will remain closed on 30th April, 2021 (Friday) on account of Elections to the Greater Warangal Muncipal Corporation, Warangal.</strong></span> -->
+
+<!--<span class="style21" style="color: #FF0"><strong> The Administrative Office of the Institute will work from 06:30 AM to 09:30 AM till the lock down period ends or until further orders. All the Faculty/Staff and Students are requested to note the same.</strong></span>
+<!-- <span class="style21" style="color: #FF0"><strong>&nbsp;  |  &nbsp; The Institute will remain closed on 14th & 15th May, 2021 (Friday & Saturday) on account of "Ramzan (Eid UI Fitar) & Following day of Ramzan".</strong></span> -->
+
+
+<!--<span class="style21" style="color: #FF0"><strong>&nbsp;  |  &nbsp; ESE-Fee Notification for UG & PG-May-2021 <a href="../homepage_pages/ESE-Fee Notification for UG & PG-May-2021 (27.04.2021).pdf" target="_blank">Click Here</a></strong></span>-->
+
+<!--<span class="style21" style="color: #FF0"> &nbsp; &nbsp; * Attention: All B.Tech. Students, <a href="academics/Fee Notification for B.Tech.JUNE 2021.pdf" target="_blank">Online registration & Tuition fee notification</a> for the academic year 2021-22. Last date of payment of fee &nbsp; : &nbsp;&nbsp;28.07.2021.</span>
+
+<span class="style21" style="color: #FF0"><strong> &nbsp; | &nbsp;  ** ESE Fee Notification for URR-18 B.Tech. I & II Semester(Regular / Supplementary) Examinations will be held in the month of July, 2021; Last date for exam registration without late fee : 10-07-2021  - for details visit the examinations page</strong></span>
+
+<span class="style21" style="color: #FF0"><strong> &nbsp; | &nbsp;  *** Department of Mechanical Engineering is organising One Week FDP on "EMERGING TRENDS IN ADVANCED MATERIALS & MANUFACTURING PROCESSES(ETAMMP-2021)" from July 12th - 16th 2021. <a href="FDPs/ETAMMP-2021/ETAMMP-21 FDP Brochure.pdf" target="_blank">Click here</a> for further details.</strong></span>
+
+<span class="style21" style="color: #FF0"><strong> &nbsp;  |  &nbsp; Two week Ministry of Electronics and Information Technology (MeitY), GoI sponsored online Faculty Development Programme(FDP) on "MetAheuristic Techniques FOR Engineering APPLICATIONS" organized by Department of Computer Science & Engineering in association with E & ICT Academy, NIT Warangal from 16th to 23rd July, 2021. <a href="pdfs/FDP  MetaHeuristic Techniques for Engineering Applications  KITSW-brochure.pdf" target="_blank">Click Here</a> to download FDP Brochure.</strong></span>-->
+<span class="style21" style="color: #FF0"><strong> &nbsp;  |  &nbsp; Conduct of ESE (Regular & Supplementary) from 1st September, 2021 through offline(pen & paper) mode for M.Tech. & MBA II Semester students. <a href="examinations/ESE offline - Notice.pdf" target="_blank">Click Here</a> for full details.</strong></span>
+
+<span class="style21" style="color: #FF0"><strong> &nbsp;  |  &nbsp; Department of Electronics & Communication Engineering is organizing 5th International Conference on “Data Engineering and Communication Technology (ICDECT-2021)” is scheduled to be held on August 27 & 28, 2021. <a href="icdect2021/pdfs/ICDECT-2021 Brochure.pdf" target="_blank">Click Here</a> to download conference Brochure and <a href="icdect2021/pdfs/ICDECT-2021 Poster.pdf" target="_blank">Click Here</a> to view the conference poster. </strong></span>
+
+<!--<span class="style21" style="color: #FF0"><strong> &nbsp; | &nbsp; ESE Fee Notification for B.Tech. URR-14 &amp; URR-18 (Regular &amp; Supplementary) Examinations will be held in the month of January / February, 2021  - for details visit the examinations page</strong></span>
+
+<span class="style21" style="color: #FF0"><strong>&nbsp; | &nbsp; &nbsp;</strong></span><span class="style21" style="color: #FF0"><strong>ESE Fee Notification for M.Tech. &amp; MBA III Semester (Regular &amp; Supplementary) Examinations will be held in the month of December, 2020 / January, 2021  - for details visit the examinations page</strong></span>
+
+<span class="style21" style="color: #FF0"><strong>&nbsp; | &nbsp; A National Level Student Technical Symposium SUMSHODHINI-20 is scheduled during 11th-12th December,2020.</strong></span> 
+<span class="style21" style="color: #FF0"><strong>&nbsp; | &nbsp; </strong></span>&nbsp; A National Level Student Technical Symposium SUMSHODHINI-20 is scheduled during 11th-12th December,2020.</strong></span>
+<span class="style21" style="color: #FF0"><strong>&nbsp; | &nbsp; Inaugural function of SUMSHODHINI-20 will be held on 11th December, 2020 (Friday) at 9.30AM.</strong></span> -->
+
+<!--<span class="style21" style="color: #FF0"><strong>&nbsp; | &nbsp; Payment of Registration Fee for T&amp;P activities - 2020-21 &amp; 2021-22" <a href="homepage_pages/B.Tech Biodata Proforma.pdf" target="_blank">Click here</a> to download T&amp;P Bio-data form and <a href="homepage_pages/Willingness form_T&P Registraion.pdf" target="_blank">Click here</a>  to download Willingness form</strong>.</span>-->
+
+<!--<span class="style21" style="color: #FF0"> &nbsp;&nbsp; | &nbsp; Department of Electronics &amp; Communication Engineering is organizing AICTE sponsored Two Week Faculty Development Programme(FDP) on "Hands on Project-Based Approach for Biomedical Signal Analysis using MATLAB"in two phases, FDP Phase-I: Dec 28,2020-Jan10,2021 and FDP Phase-II: February 01-13,2021.  Last date for registration: 26.12.2020. <a href="homepage_pages/ECE/FDP on BioMed_Brochure_1-2.pdf" target="_blank">Click Here</a> to download Brochure.</span>-->
+
+<!--<span class="style21" style="color: #FF0"> &nbsp;&nbsp; | &nbsp; </span><span class="style21" style="color: #FF0">  * Department of ECE is organizing AICTE sponsored three STTPs on "Hands on Project-Based Approach for 5G Design and Development using MATLAB" during Nov2020-Jan2021.</span>-->
+
+<!--<span class="style21" style="color: #FF0">&nbsp; | &nbsp;&nbsp; ** Attention: All M.Tech. Students, <a href="homepage_pages/Fee Notification for M.Tech.pdf" target="_blank">Online registration & Tuition fee notification</a>.</span> 
+ <span class="style21" style="color: #FF0">&nbsp; | &nbsp;&nbsp;&nbsp; *** Attention: All M.B.A. Students, <a href="homepage_pages/Fee Notification for MBA.pdf" target="_blank">Online registration & Tuition fee notification</a></span>
+ <span class="style21" style="color: #FF0">&nbsp;&nbsp;&nbsp; ** End Semester Examinations of VIII Semester B.Tech. and IV Semester MBA to be held in September-2020. visit Examinations Schedules web page for detailed time tables.</span> -->
+
+<span class="style21" style="color: #FF0">&nbsp; | &nbsp;&nbsp;&nbsp;  **** In view of extended lockdown, *Our Institute , KITSW, will remain closed till further orders* to contain the spread of Coronavirus pandemic.</span>
+
+<!--<span class="style21" style="color: #FF0">&nbsp;&nbsp;&nbsp; *** Due to the ongoing COVID-19 pandemic, the institute has planned for ODD SEMESTER ONLINE CLASSES FROM 03-08-2020 (MONDAY), for the students of B. Tech. III, V & VII semester and MBA III semester. For details, students can click on "ALMANAC for the A.Y. 2020-21" and "Odd Semester Online Classes TIMETABLES". **</span>-->
+<!--<span class="style21" style="color: #FF0">&nbsp; 1. Greetings and the best wishes from KITSW to all 147 students placed into Various MNC's (CSE-56, ECE-33, EEE-14, IT- 17, EIE- 7, MECH- 17, CE- 3) .</span>--> </a>
+ <!--<span class="style21" style="color: #FF0">&nbsp;&nbsp;&nbsp; 2. Greetings and the best wishes from KITSW to all 566 students placed into Various MNC's (CSE-255, ECE-116, EEE-60, IT- 71, EIE- 27, MECH- 24, CE- 5) </span></a> -->
+<!--    <span class="style21" style="color: #FF0">3. </span><span class="style21" style="color: #FF0">ANNUAL GRADUATION DAY FOR GRADUANDS OF 2019 (B.Tech., M.Tech. & MBA Graduands) is scheduled on 21st December, 2019 (Saturday) @ 10.00 am. <a href="homepage_pages/Instructions to Graduation Day 2019.pdf" target="_blank"><span class="style21" style="color: #FF0">Click here </span></a> for Instructions for Graduation Day, 2019 and Last Date to Register for Graduation Day is 1st December, 2019 <a href="http://103.56.30.202/BET%20E-PORTAL/" target="_blank"><span class="style21" style="color: #FF0">Click here</span></a> for Register. All the 2019 B.Tech., M.Tech. & MBA Graduands are advised to plan accordingly.</span>
+    <span class="style21" style="color: #FF0">3. </span><span class="style21" style="color: #FF0">DST-ICPS Division Sponsored three day National Level Seminar on "Deep Learning for Engineering Applications" during 6th to 8th January, 2020 organised by Dept. of ECE, <a href="homepage_pages/KITSW_DST_ECE_2020 BROCHURE.pdf" target="_blank">Click here</a> to download Brochure</span>	 -->
+<!--    <span class="style21" style="color: #FF0">5. </span><span class="style21" style="color: #FF0">DST-ICPS Division Sponsored two-week FDP on "Advances in Internet of Things" during 12th to 22nd December, 2019 organised by Dept. of CSE, <a href="homepage_pages/BH_FDP_IoT.pdf" target="_blank">Click here</a> to download Brochure</span>
+    KITSW_DST_ECE_2020 BROCHURE<span class="style21" style="color: #FF0">2. </span><span class="style21" style="color: #FF0"><a href="homepage_pages/DST-FDP Participate List_08_11_19_web_team.pdf" target="_blank">Selected participant List</a> of DST-FDP</span>
+    <span class="style21" style="color: #FF0">4. </span><a href="homepage_pages/DST-FDP ML November 2019.pdf" target="_blank"><span class="style21" style="color: #FF0">DST Sponsored two-week FDP on "Machine Learning in Speech Processing" on 11th to 22nd November, 2019 organised by Dept. of CSE</span></a>
+    <span class="style21" style="color: #FF0">6. </span><a href="homepage_pages/ESE Exam Fee notification.pdf" target="_blank"><span class="style21" style="color: #FF0">ESE Fee Notification for B.Tech., M.Tech. & M.B.A Programs</span></a>
+    <span class="style21" style="color: #FF0">7. </span><a href="homepage_pages/B.Tech. II, III & IV Year I-Semester Fee Notification.pdf" target="_blank"><span class="style21" style="color: #FF0">KU Fee Notification for B.Tech. II, III & IV Year I-Semester</span></a>
+    <span class="style21" style="color: #FF0">8. </span><a href="homepage_pages/Fee Notification Nov_Dec-2019.pdf" target="_blank"><span class="style21" style="color: #FF0">Fee Notification for UG and PG, Nov/Dec-2019</span></a>
+   <!--   <span class="style21" style="color: #FF0">9. Revised B.Tech. I-Semester MSE-I Examination Time Table, Sep/Oct-2019 for details visit examinations page</span><a href="homepage_pages/timetableIsem.pdf">
+<a href="homepage_pages/SAC-2019.pdf"><span class="style21" style="color: #FF0">1.SAC NOTIFICATION FOR A.Y. 2019-20 IS RELEASED. LAST DATE TO APPLY FOR THE VARIOUS POSITIONS IS 04.09.2019</span></a><span class="style21" style="color: #FF0">10."Last date for submission of application form for the selection of ISTE student body is 28.8.2019. Follow the link <a href="https://forms.gle/dHx8QA8u5znVA1Ue8">https://forms.gle/dHx8QA8u5znVA1Ue8</a> Futhur details contact Dr.S.Sunil Pratap Reddy, Assoc.Prof. of Civil Engineering" 11.</span><span class="style21" style="color: #FF0">"Hearty Congratulations to our faculty on receiving Ph.D degrees from prestigious NITW. Dr.M.Srikanth, Assoc.Professor, Dept.of CE, Dr.D.Abhignya, Asst.Professor,Dept.of CE,Dr.Anil Pinapati,Asst.Professor,Dept.of CSE." 12</span><span class="style21" style="color: #FF0">.B.Tech VIII Semester Advance Supplementary Fee notification and Examination Time table released - for details visit the examinations page </span>-->
+     <!-- <span class="style21" style="color: #FF0">**</span><a href="homepage_pages/Internal Sliding notice & Apll form 20190001.pdf" target="_new"><span class="style21" style="color: #FF0">First year B.Tech. Internal sliding on 06.08.2019 @3.00 pm - vacant seats under category A:- Last date to apply in prescribed proforma: 06.08.2019 before 10:30 am. </span></a> -->
+      <!-- <span class="style21" style="color: #FF0">**"INDEPENDENCE DAY" celebrations will be held on 15th August 2019 (THURSDAY) at Institute campus infront of Administrative Building (Block-IV). In connection with the celebrations, National Flag will be hoisted at 8.00 AM. Hence, all the faculty, staff and students are required to attend the flag hoisting ceremony</span>-->
+    <!-- <span class="style21" style="color: #FF0">**Orientation Programme for B.Tech I Year: for CE, ME, EIE, EEE, IT on 02.08.2019 (Friday) and for CSE, CSN, ECE, ECI on 03.09.2019 (Saturday)</span>
+          
+<span class="style21" style="color: #FF0">4.</span><a href="https://on.tcs.com/2Xss6qa" target="_new"><span class="style21" style="color: #FF0">All the students of 2020 pass out batch (T&P Registered and Unregistered) having 60% & more throughout academics and 01 active backlog are hereby instructed to apply for TCS National Qualifier Test 2020 without fail</span></a>
+
+-->
+<!--<span class="style21" style="color: #FF0">**<span class="style21" style="color: #FF0"><a href="homepage_pages/fee notice-2019.pdf" target="_blank"><span class="style21" style="color: #FF0">Tuition fee & registration Notification for the year 2019-2020, 
+pay the tuition fee on or before 15.06.2019 without fine (A late fee of Rs.50/- per day will be charged up to 29.06.2019.)
+</span></a> .</span></span>
+<a href="homepage_pages/scholorship 2019-200001.pdf" target="_blank"><span class="style21" style="color: #FF0">14.All the students of B.Tech,M.Tech & MBA who are eligible to renew scholarships/ reimbursement of tuition fee for the academic year 2019-20 are required to register online and submit the required documents in the section on or before 30.08.3019 . for details click here.</span></a>
+<!--<a href="homepage_pages/Mtech Registration0001.pdf" target="_blank"><span class="style21" style="color: #FF0">2.Students of M.Tech III Semester (II Year) are required to pay the tuition fee and complete registrations on or before 15-06-2019 for details click here.</span></a>
+<a href="homepage_pages/MBA registration0001.pdf" target="_blank"><span class="style21" style="color: #FF0">3.Students of MBA III semester (II Year) are required to pay the tuition fee and complete registrations on or before 15-06-2019 for details click here.</span></a>-->
+<!--<a href="homepage_pages/link.pdf" target="_blank"><span class="style21" style="color: #FF0">2. Kind attention:It is to inform all the students that SWAYAM MOOCs is offering 44 non-technology courses in the month of July-Nov 2019. for details click here.</span></a>
+
+<a href="homepage_pages/MOOCS  Courses for July-Nov, 2019 semster.pdf" target="_blank"><span class="style21" style="color: #FF0">6. List of UGC Non-Technology PG MOOCs Course for SWAYAM Platform from (July-Nov, 2019)</span></a>
+<!--<a href="homepage_pages/Gold Medal0001.pdf" target="_blank"><span class="style21" style="color: #FF0">2.Applications are invited for Award of Gold Medals & Cultural Prize-2018-19. Last date is 13.05.2019 (Monday) by 4:00 pm.</span></a>
+<a href="homepage_pages/ICSSR_Brochure.pdf" target="_blank"><span class="style21" style="color: #FF0">17.ICSSR Sponsored National Seminar on Digital India : Initiative towards Social Transformation & Empowerment 28-29, June, 2019 organised by department of management" and link "ICSSR_Brochure.pdf" file from attachment.</span></a>
+
+<!--<a href="examinations/Examinations_notifications.html"><span class="style21" style="color: #FF0">4.Last date for end semester examinations of B.TECH.,M.TECH., & MBA 
+program April/May,2019 (Regular & Supplementary of all semesters) is 23.04.2019. for details  click here or visit examinations page.</span></a>
+<span class="style21" style="color: #FF0">18.B.Tech III & IV Semester (URR-14)
+Revised Time Tables of II-Mid Semester of B.Tech ( II, IV, VI & VIII Semesters) and M.Tech II Semester. see the examinations page for details.<!--<img src="images/icon_new.gif" width="42" height="18" alt="new" /></span> 
+<!--<a href="homepage_pages/Makeupclass TT0001.pdf" target="_blank"><span class="style21" style="color: #FF0">3.Makeup Class Time-Table (for students who are appearing in ensuing supplementary examinations) for B.Tech I Semester (URR-18),B.Tech I & II Semester(URR-14) B.Tech III & IV Semester (URR-14)</span></a>.
+<span class="style21" style="color: #FF0">4.The Revised Examination Timings of MSE-II for B.Tech. II, IV, VI, VIII-Semester & M.Tech. II Semester Old Timings: 9 AM - 11 AM :: Revised Timings :: 10 AM to 12 NOON</span>
+<a href="homepage_pages/s1ands2time table.jpg" target="_blank"><span class="style21" style="color: #FF0">5.The Revised Examination Timings of MSE-II for MBA II-SEMESTER, First Session - Old Timings : 9 AM - 10:30 AM :: Revised Timings : 10 AM to 11:30 AM, Second Session -  Old Timings : 11:30 am to 1: 00 pm :: Revised Timings: 2 PM to 3:30 PM</span></a>
+<a href="homepage_pages/s1ands2time table.jpg" target="_blank"><span class="style21" style="color: #FF0">6.B.Tech II Semester (STREAM-I and  STREAM-II) Special Remedial class Timetable- March/April-2019</span></a>
+
+<span class="style21" style="color: #FF0">7.<span class="style21" style="color: #FF0">II Mid Semester Examinations(MSE-II) of B.Tech,M.Tech and MBA to be held in April-2019. visit examinations page for detailed time tables.</span></span></span>-->
+
+        </blockquote>
+        </marquee>
+    </div>
+  </div>
+</div>
+	<!--End TopSection-->
+    <!-- start space for info--><!--end space for info-->
+    <!-- Stories Area-->
+<div  class="grid_2" id="left_menu">
+  <div>
+<!--	<a href="homepage_pages/SSS-Questinnaire_Students.pdf" target="_blank"><img src="images/student_satisfaction_survey.jpg" alt="fac_rec" width="146" height="50" border="0"></a>	
+		<!--<a href="homepage_pages/Kokooroko1.pdf" target="_new"><a href="http://www.sumshodhini.org" target="_blank">--><!--<img src="images/kitscode.gif"/>--><!--<--<!--<ul>
+		  <li style="border-bottom:0px;color:#06F; font-size:12.5px; font-weight:bold; text-align:center;"><a href="homepage_pages/bcategory.html" target="_blank"><img src="images/induction-program-mba-mtech.jpg" width="146" height="50" alt="fac_rec"></a></li>
+</ul>
+<ul>
+		  <li style="border-bottom:0px;color:#06F; font-size:12.5px; font-weight:bold; text-align:center;"><a href="homepage_pages/#" target="_blank"><img src="images/student_satisfaction_survey.jpg" width="146" height="50" alt="fac_rec"></a></li>
+</ul>-->
+<!--	<a href="homepage_pages/bcategory.html" target="_blank"><img src="images/Cat-B MTech MBA.jpg" alt="fac_rec" width="146" height="50" border="0"></a>
+	<a href="homepage_pages/SSS-Questinnaire_Students.pdf" target="_blank"><img src="images/sss-new.jpg" alt="fac_rec" width="146" height="50" border="0"></a>-->
+<a href="academics/B.Tech. Lateral Spot Admissions.html" target="_blank"><img src="https://www.kitsw.ac.in/images/Spot%20Admissions.gif" width="142" height="35" border="0" style="margin-top:5px;"></a>	
+<!-- <a href="I Yr Admn Documents check list.pdf" target="_blank"><img src="fycl-1.jpg" alt="fac_rec" width="151" height="61" border="0" align="left"></a>
+  <a href="Events/check_list.pdf" target="_blank"><img src="fybacl.gif" alt="fac_rec" width="146" height="50" border="0" align="left"></a>-->
+<ul>
+<!--     <li style="border-bottom:0px;color:#06F; font-size:12px; font-weight:bold; text-align:left;"><a href="I Yr Admn Documents check list.pdf" target="_blank"><span style="color:#0000FF; font-weight:bold;">FIRST YEAR B.TECH. 2020-21 ADMISSIONS CHECK LIST</span><img src="images/icon_new.gif" width="" height="" alt="new" /></a></li> <br/>-->
+			
+	  <li style="border-bottom:0px;color:#06F; font-size:12px; font-weight:bold; text-align:center;">EAMCET / ICET CODE:
+        <span style="color:#FF0000; font-weight:bold; font-size:15px;">KITS</span></li>
+</ul>
+
+</div >  
+<a href="academics/Academic_Fee_Payment.html" target="_blank"><img src="https://www.kitsw.ac.in/images/afp-new.jpg" width="146" height="45" alt="afp"></a>   
+	<ul style="font-size:8px; width:150px;" >
+<!--			<li><a href="index.html">Home</a></li>-->
+<!-- 	  <li><a href="academics/Academic_Fee_Payment.html" target="_blank"><img src="images/afp-new.jpg" width="146" height="45" alt="afp"></a></li>			-->
+  	  <li><a href="about_kitsw/about_kitsw.html">About KITSW</a></li>
+      <li><a href="about_kitsw/kitsw_CORE_VALUES.html" target="_blank">CORE VALUES</a></li>
+			<!--<li><a href="vision_mission/vision_mission.html">Vision & Mission</a></li>-->
+			<li><a href="administration/governing_body.html">Administration</a></li>
+			<li><a href="admissions.html" target="_blank">Admissions</a></li>
+   <li><a href="homepage_pages/bcategory-btech.html" target="_blank">B-Category Admissions<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--? (UG)<!--<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--?--> </a></li>						
+			<li><a href="academics/home.html" class="style12"><span style="color:#FF3300; font-weight:bold;">Academics</span></a></li>
+            <li><a href="academics/Almanac_Autonomous.html">Almanac<!--<img src="images/icon_new.gif" width="" height="" alt="new" /><img src="academics/Almanac.gif"  alt="examinations" style="padding:0px; margin:0px;">--></a></li>
+            <li><a href="departments/departments.html"><span style="color:#FF3300; font-weight:bold;">Departments</span></a></li>
+            <li><a href="academy_info.html" target="_blank">Centers of Excellence</a></li>
+			<li><a href="examinations/Examinations.html">Examination Branch<!--<img src="images/examination/examination.gif"  alt="examinations" style="padding:0px; margin:0px;">--></a><a href="academics/Almanac_Autonomous.html"><!--<img src="images/icon_new.gif" width="" height="" alt="new" />--></a></li>
+            <li><a href="departments/Training_placement/home.html"><span style="color:#FF3300; font-weight:bold;">Training & Placement</span></a></li>
+		
+			<li><a href="research/research.html">Research</a></li>
+			<li><a href="Library/home.html">Central Library</a></li>
+			<!--<li><a href="sports_games/sports_games.html">Sports & Games</a></li>-->
+			<li><a href="Academic_support_center/industrial_institue_interaction_cell.html">Academic/Student Support Centers</a></li>
+			<li><a href="sac/sac.html"><span style="color:#FF3300; font-weight:bold;">Student Activity Center</span></a></li>
+			<li><a href="Professinal_bodies/home.html">Professional Bodies</a></li>
+            <li><a href="swayam-moocs.html" target="_blank">SWAYAM-NPTEL MOOCS</a></li>
+            <li><a href="homepage_pages/KITSW INTERNSHIP POLICY-2020.pdf" target="_blank"> <span style="color:#FF3300; font-weight:bold;">INTERNSHIPS</span></a></li>
+             
+	</ul>
+</div>
+	
+
+<div class="grid_4"  style="width:315px;margin-top:10px;">
+<div style="text-align:center;"><a href="homepage_pages/36_graduation_day_gallery.html" target="_new"><img src="https://www.kitsw.ac.in/images/graduationday-2019-3.jpg" alt="googleImage" width="309" height="30" border="0" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a></div>
+
+<div style="text-align:center;"><a href="aicte_files.html" target="_new"><img src="https://www.kitsw.ac.in/images/aicte-ugc-files.jpg" width="309" height="30" border="0"></a></div> 
+
+<!--<div style="text-align:center;"><a href="homepage_pages/36_graduation_day_gallery.html" target="_new"><img src="images/graduationday-2019.gif" alt="googleImage" width="309" height="38" border="0" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a></div>-->
+<!--  <h5 style="font-size:13px;color:#101538; background:url(images/sub_heading_bg.jpg); background-repeat:no-repeat;font-weight:bold;" >News/Events</h5 >-->
+<script type="text/javascript">
+// BeginOAWidget_Instance_2140022: #jQueryTabs 
+
+
+	$(function() {
+      $("#jQueryTabs1, #jQueryTabs2").tabs({
+		event:"mouseover",
+		collapsible: false,
+		selected:'2',
+		fx: { opacity: 'none', duration: 1 }
+        }).tabs( "none" , 1 , false ); 	
+	});
+
+// EndOAWidget_Instance_2140022
+        </script>
+<!--  <div  style="height:35px;">-->
+<!--     <a href="rafp.html" target="_blank"><img src="images/rafp-new.jpg" alt="" width="310" height="48" border="0" style="margin-top:2px; margin-bottom:2px;"></a>-->
+<!--</div> 
+  <div  style="height:67px;">-->
+<!--     <a href="csfw.html" target="_blank"><img src="images/csfw-new.jpg" alt="" width="310" height="30" border="0" style="margin-top:2px; margin-bottom:2px;"></a>  -->
+<!--  </div>-->
+  	<br/>
+ <div id="jQueryTabs1" style="height:431px;">
+
+ <a href="https://www.youtube.com/watch?v=9hlR0n0n72g" target="_blank"><img src="https://www.kitsw.ac.in/images/kitsw_campus_tour.gif" alt="" width="309" height="24" border="0" style="margin-top:1px; margin-bottom:0px;"></a> 
+ 
+ <a href="Academic_support_center/Alumni_affairs_cell.html" target="_blank"><img src="https://www.kitsw.ac.in/images/AAER-new.jpg" alt="" width="309" height="24" border="0" style="margin-top:1px; margin-bottom:0px;"></a>	
+ 		 				
+ <a href="faculty_recruitment_june2021.html" target="_blank"><img src="https://www.kitsw.ac.in/images/faculty_recruitment_June%202021-new.jpg" alt="" width="309" height="55" border="0" style="margin-top:1px; margin-bottom:0px;"></a>			
+
+  <div style="height:93px;">  
+   <a href="academics/B.Tech. I Yr Students.html" target="_blank"><img src="https://www.kitsw.ac.in/images/B.Tech%20I%20Yr%20Students.gif" alt="" width="309" height="90" border="0" style="margin-top:0px; margin-bottom:3px;"></a></div>
+
+  <div style="height:73px;">  
+   <a href="academics/UG Lateral Entry Students.html" target="_blank"><img src="https://www.kitsw.ac.in/images/Lateral%20Entry%20Students.gif" alt="" width="309" height="70" border="0" style="margin-top:0px; margin-bottom:3px;"></a></div>
+   
+   <a href="csfw.html" target="_blank"><img src="https://www.kitsw.ac.in/images/cfsw.jpg" alt="" width="309" height="25" vspace="2" border="0" style="margin-top:0px; margin-bottom:0px;"></a>  	 
+
+   <a href="spg.html" target="_blank"><img src="https://www.kitsw.ac.in/images/sumshodini-20%20photo%20gallery-new.jpg" width="309" height="25" border="0" style="margin-top:1px; margin-bottom:0px;"></a>			   	 	
+
+   <a href="students_achievements.html" target="_blank"><img src="https://www.kitsw.ac.in/images/Std_Fac_Ach.jpg" width="309" height="44" border="0" style="margin-top:1px; margin-bottom:0px;"></a>		  
+
+   <a href="students_circulars.html" target="_blank"><img src="https://www.kitsw.ac.in/images/Circulars.jpg" width="309" height="34" border="0" style="margin-top:1px; margin-bottom:0px;"></a>			   	 	
+ 
+<!--<ul >
+ <li style="width:41%; text-align:left; font-size:12px;"><a href="#tabs-1">Students/Faculty<br />Achievements</a></li>
+ <li style="width:20%; text-align:center; font-size:12px;"><a href="#tabs-2">Events<br />&nbsp;</a></li>
+ <li style="width:34%; text-align:center; font-size:12px;"><a href="#tabs-3">Notifications<br />&nbsp;</a></li>
+</ul>-->
+		  
+
+  </div>
+</div>
+	
+<div class="grid_4"  style="width:305px; margin-top:10px;">
+<!--<div style="text-align:center;"><a href="" target="_new"><img src="images/alumni2019.gif" alt="googleImage" width="309" height="38" border="0" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a></div>-->
+<div style="text-align:center;"><a href="homepage_pages/SJR-alumni-1994.html" target="_new"><img src="https://www.kitsw.ac.in/images/alumni2019-3.jpg" alt="googleImage" width="305" height="31" border="0" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a></div>
+
+<!--<div style="text-align:center;"><a href="ugc_files.html" target="_new"><img src="images/UGC Files-1.jpg" width="309" height="38" border="0"></a></div> -->
+<div style="text-align:center;"><a href="#"><img src="https://www.kitsw.ac.in/images/Covid-19%20Guidelines.jpg" width="305" height="30" border="0"></a></div>
+<!--	<h5 style="font-size:13px;color:#101538; background:url(images/sub_heading_bg.jpg); background-repeat:no-repeat;font-weight:bold;">Achievements</h5>-->
+<br/>
+		<div id="jQueryTabs2" >
+<!--          <ul >
+            <li style="width:48.5%; text-align:center; font-size:14px;"><a href="#tabs-5">Faculty</a></li>
+           <li style="width:48%; text-align:center ; font-size:14px;"><a href="#tabs-4">Students</a></li>
+          </ul>-->
+          
+ <div id="tabs-5" style="height:431px;">		
+<!--  <div  style="height:35px;">
+<a href="csfw.html" target="_blank"><img src="images/csfw-new.jpg" alt="" width="310" height="30" border="0" style="margin-top:2px; margin-bottom:2px;"></a>  </div> 
+
+  <div  style="height:67px;">
+     <a href="rafp.html" target="_blank"><img src="images/rafp-new.jpg" alt="" width="310" height="65" border="0"></a>
+  </div>-->
+  <div style="height:95px;">  
+ <a href="departments/Training_placement/ongoing_placements.html" target="_blank">
+ <img src="https://www.kitsw.ac.in/images/CP_2021-22.gif" width="299" height="90" border="0" style="margin-top:1px; margin-bottom:0px;"></a>  </div>
+
+<!--  <div style="height:43px;">  
+   <a href="academics/B.Tech. I Year - SIP2020.html" target="_blank"><img src="images/SIP-2020-1.jpg" alt="" width="299" height="40" border="0" style="margin-top:2px; margin-bottom:3px;"></a>     
+  </div>
+  <div style="height:43px;">  
+   <a href="academics/B.Tech. I Year - SOP2020.html" target="_blank"><img src="images/SOP-2020-1.jpg" alt="" width="299" height="40" border="0" style="margin-top:2px; margin-bottom:3px;"></a>     
+  </div>
+  <div style="height:33px;">  
+   <a href="academics/B.Tech. I Year.html" target="_blank"><img src="images/bt-1yr-acad-prog.jpg" alt="" width="299" height="27" border="0" style="margin-top:2px; margin-bottom:2px;"></a>  </div>-->		
+  <div style="height:175px;">
+<!--     <a href="honours_minor.html" target="_blank"><img src="images/hm_bg_2.jpg" alt="" width="309" height="170" border="0"></a>-->
+     <a href="honours_minor.html" target="_blank"><img src="https://www.kitsw.ac.in/images/hm.jpg" alt="" width="299" height="170" vspace="6" border="0"></a>  </div> 
+  <div style="height:105px;">
+<!--     <a href="homepage_pages/Classwork_Timetables.html" target="_blank"><img src="images/cwtt.jpg" alt="" width="309" height="69" border="0"></a>
+     <a href="academics/Almanac_Autonomous.html" target="_blank"><img src="images/almanac.jpg" alt="" width="309" height="45" border="0"></a>
+-->
+     <a href="homepage_pages/Classwork_Timetables.html" target="_blank"><img src="https://www.kitsw.ac.in/images/Classwork%20Timetables.jpg" alt="" width="299" height="67" vspace="3" border="0"></a>
+<!--     <a href="homepage_pages/Classwork_Timetables.html" target="_blank"><img src="images/Cwtt1-2021.jpg" alt="" width="299" height="80" border="0"></a>-->
+     <a href="academics/Almanac_Autonomous.html" target="_blank"><img src="https://www.kitsw.ac.in/images/almanac.jpg" alt="" width="299" height="44" vspace="3" border="0"></a>
+     <a href="research/Policy_Updated_Version%20-8_Final%20Copy.pdf" target="_blank"><img src="https://www.kitsw.ac.in/images/Anti-Plagarism_Policy.jpg" alt="" width="299" height="34" vspace="3" border="0"></a>	 
+<!--     <a href="academics/Almanac_Autonomous.html" target="_blank"><img src="images/Almanac1-2021.jpg" alt="" width="299" height="57" border="0"></a>	 -->
+
+	 
+<!--     <a href="homepage_pages/CIRCULAR for I year UG Almanac_For circulation.pdf" target="_blank"><img src="images/I yr-almanac-new.jpg" alt="" width="309" height="49" border="0"></a>
+     <a href="homepage_pages/CIRCULAR for ACTIVITY & SIP2020SCHEDULEs for I year students of A.Y. 2020-21 (09112020).pdf" target="_blank"><img src="images/almanac.jpg" alt="" width="309" height="45" border="0"></a>	 
+-->  </div>
+<!--      <a href="honours_minor.html" target="_blank"><img src="images/cwtt.jpg" alt="" width="309" height="100" border="0"></a>
+   <a href="honours_minor.html" target="_blank"><img src="images/almanac.jpg" alt="" width="309" height="80" border="0"></a>
+  <a href="honours_minor.html" target="_blank"><img src="images/cwtt_almanac1.jpg" alt="" width="309" height="140" border="0"></a>
+<!--       <marquee direction="up" height="225" onMouseOut="this.setAttribute('scrollamount', 3, 0);" onMouseOver="this.setAttribute('scrollamount', 0, 0);" scrollamount="3" scrolldelay="200">
+       <ul>
+        <li>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. S.Venkatramulu, Associate Professor in the department of Computer Science & Engineering is awarded with Ph.D., Degree from Kakatiya University, Warangal. 
+       <br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. P.Vijay Kumar, Assistant Professor in the department of Computer Science & Engineering is awarded with Ph.D., Degree from JNTUH, Hyderabad. 
+       <br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. Rajendar Gogu, Associate Professor in the department of Electrical & Electronics Engineering is awarded with Ph.D., Degree from JNTUH, Hyderabad. 
+       <br /> </div>	   	   		
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. B.Jagadish Kumar, Associate Professor in the department of Electrical & Electronics Engineering is awarded with Ph.D., Degree from JNTUH, Hyderabad. 
+       <br /> </div>		
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. P.Shirisha, Assistant Professor of Civil Engineering is awarded with Ph.D., Degree from NIT, Warangal on 6th March, 2020. 
+       <br /> </div>				
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. V.Swathy, Assistant Professor of Computer Science & Engg. is awarded with Ph.D., Degree from Osmania University, Hyderabad on 25th February, 2020. 
+       <br /> </div>		
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. A.Suchith Reddy, Assistant Professor of Civil Engg. is awarded with Ph.D., Degree from NIT, Warangal on 27th January, 2020. 
+       <br /> </div>			
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. Y.Manjusree, Assistant Professor of Electrical & Electronics Engg. is awarded with Ph.D., Degree from Acharya Nagarjuna University, Guntur, Andhra Pradesh in October, 2019. 
+       <br /> </div>			
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. G. Srinu, Assistant Professor of Mechanical Engg. is awarded with Ph.D., Degree from NIT, Warangal. 
+       <br /> </div>		
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. Md. Sameer, Assistant Professor of Mechanical Engineering is awarded with Ph.D., Degree from NIT, Manipur on 16th November, 2019. 
+       <br /> </div>				
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Sri B.Hanumanthu, Assistant Professor, CSE dept. for getting Seminar grant sanctioned on topic: "Emerging Trends in Artificial Intelligence" from Department of Science & Technolgy(ICPS Division), New Delhi with sanctioned amount of Rs. 700000/-.(Principal Investigator: B.Hanumanthu and Co-Principal Investigators: Dr. P.Niranjan, Dr.V.Shankar). 
+       <br /> </div>		
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Sri A.Srinivas, Assistant Professor, ECE dept. for getting Seminar grant sanctioned on topic: "Deep Learning for Engineering Applications" from DST under ICPS Scheme with sanctioned amount of Rs. 700000/- (Principal Investigator: A.Srinivas and Co-Principal Investigator: Dr. G.Raghotham Reddy). 
+       <br /> </div>			   
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. V.Chandra Shekhar Rao, Associate Professor of Computer Science &amp; Engg.  is awarded with Ph.D., Degree from JNTU, Hyderabad.<br /> 
+       </div>	
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. V. Shankar, Professor, CSE dept. for getting two week FDP sanctioned on topic: "Domain specific IoTs and illustration of IoTs design using case studies" from AICTE with sanctioned amount of Rs. 455000/-. 
+       <br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+our faculty on receiving Ph.D degrees from prestigious NITW. Dr.M.Srikanth, Assoc.Professor, Dept.of CE, Dr.D.Abhignya, Asst.Professor, Dept.of CE, Dr.Anil Pinapati, Asst.Professor, Dept.of CSE" 
+       <br /> </div>
+<!--        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. Abhay B. Lingayat, Asst.Professor of Mechanical Engineering is awarded with Ph.D., Degree from NIT, Warangal on 01.08.2019" 
+       <br /> </div>  -->
+<!--        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+        <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+SWAYAM-NPTEL Top Performing Mentor Certificate is awarded to Dr. S. Narasimha Reddy, Associate Professor, Dept. of CSE for mentoring 39 students in the course "Programming in Java" 
+       <br /> </div>
+       <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+       <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+SWAYAM-NPTEL Mentor Certificate is awarded to Sri. P. Vijay Kumar, Assistant Professor, Dept. of CSE for mentoring 18 students in the course "Programming, Data structures and Algorithms using Python".
+       <br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. Grace Shanthi .W, Assistant Professor, Department of M&H having been awarded Ph.D. degree from JNTU Hyderabad, Telangana State. 
+       <br /> </div>-->
+<!--         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. S. G. Narayana Reddy, Professor, Department of Civil Engineering, having been awarded Ph.D. degree from Andhra University, Visakhapatnam.
+       <br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Smt S.B.Swathi , Assistant Professor of IT has received seminar grant of  1Lakh Rupees by Department of Science & Technology (DST).
+       <br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to <span class="tab_content" style="margin-left:18px;">Dr.P.Niranjan, Head, Dept.of CSE,</span> </span>AICTE-ISTE sanctioned Rs.3Lakhs to Dr.P.Niranjan, Head, Dept.of CSE to conduct Induction/Refresher program on "BIG DATA ANALYTICS USING R-TOOL
+       <br /> 
+       </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+Dr. M.Chandrasekhar, Assistant Professor  Dept. of ECE has received Major research project by DST worth of Rupees 40 Lakhs.
+       <br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+      Dr. G.Ragothama Reddy, Professor & Head, Dept. of ECE on having been awarded Ph.D. Degree from Osmania University, Hyderabad. 
+       <br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>
+      Dr. S.Narasimha Reddy, Asst. Professor, Dept. of CSE on having been awarded Ph.D. Degree from VNIT, Nagpur.
+       <br /> </div>
+
+<!-- <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. B.Siva Kumar Reddy, Asst. Professor, Dept. of ECE on having been awarded Ph.D. Degree from NIT, Warangal. 
+<br /> </div>
+
+<div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. D.Rakesh Chandra, Asst. Professor, Dept. of EEE on having been awarded Ph.D. Degree from NIT, Warangal. 
+<br /> </div>
+          <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. V.Venkateshwar Reddy, Asst. Professor, Dept. of ECE on having been awarded Ph.D. Degree from NIT, Warangal. 
+<br /> </div>
+         
+   <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+   <div class="tab_content" style="margin-left:18px;">
+   <span class="style12">Congratulations to </span>Dr. M.Chandrasekhar, Asst. Professor, Dept. of ECE on having been awarded Ph.D. Degree from Andhra University, Visakhapatnam. 
+<br /> </div>
+
+<div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span> Dr. P. Shireesha, Asst.Professor, Dept. of CSE, for  allotting a Research Scholar (Mr.V.Ramu) by UGC under Rajiv Gandhi National Fellowship Scheme for the year 2014-15.
+<br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+         
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span> Dr. K. Venu Madhav, Assoc. Professor, Dept. of EIE on having been awarded Ph.D. Degree from JNTU, Hyderabad, under the guidance of Dr. K. Ashoka Reddy, Professor, Dept.of ECE, KITSW.
+<br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>         
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span> Dr. Ch.Sateesh Chandra, Assistant Professor, Dept. of Physical Sciences on having been awarded Ph.D. Degree from Kakatiya University, Warangal.
+<br /> </div>
+        <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+         
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>C. Srinivas, Associate Professor, Dept. of Computer Science and  Engineering has  been selected as Telangana State Student Coordinator, Computer Society of India (CSI), Region-V.   
+<br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+         
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. K. Srinivas, Asst. Professor, Dept. of EIE on having been awarded Ph.D. Degree from NIT, Warangal.   
+<br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. P. Suresh Kumar, Asst. Professor, Dept. of CSE on having been awarded Ph.D. Degree from JNTU, Hyderabad.  
+<br /> </div>
+         <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span> Sri B.Raju, Asst. Prof., Dept. of CSE, authored a text book "Compiler Design", published by Research India Publications, New Delhi. 
+<br /> </div>
+		    <div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span> Dr.G.Shailaja, Asst. Prof., Dept. of MBA, authored a textbook "WORKING CAPITAL MANAGEMENT IN APGENCO Ltd",published by LAP LAMBER Academic Publishing, Germany.
+<br /> </div>
+<div style="float:left; "><img src="images/bullet.gif"; alt="bullet" /></div>
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Dr. G. Srinivasa Rao, Asst. Professor, Dept. of Mechanical Engineering on having been awarded Ph.D. Degree from JNTU, Hyderabad.
+<br /> </div> -->
+			  
+<!--        </li>
+	   
+       </ul>
+     </marquee>-->
+ </div>
+ <!--
+    <div id="tabs-4"  style="height:290px;">
+       <marquee direction="up" height="280" onMouseOut="this.setAttribute('scrollamount', 3, 0);" onMouseOver="this.setAttribute('scrollamount', 0, 0);" scrollamount="3" scrolldelay="200">
+            <ul>
+			<li>		
+             <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>"Prem Singh Padya", 3rd Year CSE3 student received KARMA VEER CHAKRA Award and Global Young Leader Fellowship(GYLF) at IIT Delhi on 12th October, 2019 from iCONGO(The Indian Confederation of NGOs') associated with United Nations(UN).<br /> 
+</div>           
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>"Mohd Ehsan Ur Rahman", 3rd Year CSE3 student for successfully publishing the paper titled "Image retrieval by integrating global correlation of color and intensity histograms with local texture features" in SCI indexed Journal "Multimedia Tools and Applications", Springer publisher.<br /> 
+</div>
+<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">513 students placed into various MNCs in the Academic year 2018-19.<br /> 
+</div>
+          <!-- <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>all the students who selected in GE Campus Placement Drive.<br /> 
+</div>-->
+<!-- <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>-->
+            
+        <!--   <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>all the students who selected in Tech Mahindra Campus Placement Drive.<br /> 
+</div>
+<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+
+  <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to </span>Mr V.Shiva Prasad student of Mech.Engg. 2015 passing out batch receiving the TCS Best Student project award from Sri V.Rajanna TCS VicePresident Hyd.<br /> 
+</div>
+   
+    		<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span> P.Vamshi of B.Tech. IV/IV CSE dept. for developing a <a href="homepage_pages/TECH-COM.apk">"TECH-COM" App for Technical/Viva Voce Questions & Answers.</a><br /> 
+</div>
+<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span> All the 120 TCS Selected Students.<br /> 
+</div>
+ <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+ 
+            
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span> the students who selected for M/s Virtusa,Hyderabad and HCL Comnet, Hyderabad.<br /> 
+</div>
+ <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>   All the students who selected for Mind Tree.<br /> 
+</div>
+    <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>   All the 06 students selected for Osmosys, Hyderabad<br /> 
+</div>
+ 
+            <div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>   Mr. M. Manoj Kumar(11016T0331) & Mr. B. Sharath Prasad(11016T0334) who have been selected through Campus Placement Drive held on 27.08.2014 by M/s. FMC, Hyderabad.<br /> 
+</div>
+<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+            
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>   All the students who selected for Zensar, Pune & CSC, Hyderabad.<br /> 
+</div>
+<div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+           <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>  G.Snigdha Rao (12016T0986), R. Ashrita (12016T0972), G. Kalanjali (12016T0977) of B.Tech.III/IV students of Computer Science & Engineering, who have been selected as Microsoft Student Partners(MSP).<br /> 
+</div>-->
+             <!--<div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>  TEAM OF EDC: Mr Goutham (12016T 0398)and Mr Narendra (12016T 0350) students of III/IV Mechanical Engineering,who were selected as finalists and subsequently became one of the 6 winning teams to win prototype seed fund of Rs. 20,000 from the Govt. of Telangana at August Fest - Idea Camp.<br /> 
+</div>--> 
+            <!--<div style="float:left;"><div style="float:left;"><img src="images/bullet.gif"; alt="bullet" /></div>
+             <div class="tab_content" style="margin-left:18px;"><span class="style12">Congratulations to</span>  All the 98 students selected for TCS.<br /> <br />
+</div>
+		</div></li>-->
+			<!--<li>&nbsp;</li>-->
+       <!--     </ul>
+      </marquee> 
+             
+          </div>-->
+        </div></p>
+</div>
+
+<div class="grid_2_last"></div> 
+ <div  class="grid_2" id="left_menu" style="margin-top:5px;">
+<a href="Fit-India/FitIndia.html" target="_blank"><img src="https://www.kitsw.ac.in/images/fit-india.jpg" width="140" height="35"></a> <br />
+	<a href="iqac/sss.html" target="_blank"><img src="https://www.kitsw.ac.in/images/sss-new.jpg" alt="fac_rec" width="146" height="50" border="0"></a>
+
+		<ul  style="font-size:10px; width:145px;" >
+       <!-- <li><a href="Recruitment  Notifications.html" target="_new">Faculty Recruitment <span style="font-size:12px; font-weight:bold;">Notification-2015</span></a><a href="Latest Notifications.html" target="_blank"><img src="images/icon_new.gif" width="" height="" alt="new" /></a></li>
+		<li><a href="Latest Notifications.html" target="_blank"> Tution fee <img src="images/icon_new.gif" width="" height="" alt="new" />  Notification-2015-16</a></li>-->
+       <!-- <li><a href="homepage_pages/onlineApplication_2017.html" target="_blank"> B-Category <!--<img src="images/icon_new.gif" width="" height="" alt="new" />Admissions 2017-18</a></li>-->
+       <!-- <li><a href="homepage_pages/inst_BTech.html" target="_blank"> Academics<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--? (UG)<!--<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--?--> <!--under Autonomous</a></li>
+   <li><a href="https://kitsw.new.knimbus.com/" target="_blank"><div class="blink"><strong><font color="red">Remote Access</font></strong></div></a></li>	   -->
+   <li><a href="Library/e-journals.html" target="_blank">e-Journals(AICTE Mandatory)</a></li>
+   <li><a href="https://free.aicte-india.org/ms-products.php" target="_blank">AICTE-Microsoft<br/>e-Learning portal</a></li>
+   <li><a href="homepage_pages/NAAC.html" target="_blank">NAAC</a></li>
+   <li><a href="homepage_pages/NBA Accredititaion Letters from 2001 to 2020.pdf" target="_blank"> NBA Accreditation<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--? (UG)<!--<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--?--> </a></li> 
+   <li><a href="nirf.html" target="_blank">NIRF</a></li>     
+   <li><a href="ariia.html" target="_blank">ARIIA</a></li>        
+   <li><a href="homepage_pages/ISO 9001 2015.pdf" target="_blank">ISO 9001-2015</a></li>     
+   <li><a href="https://ndl.iitkgp.ac.in/acc-registration.php" target="_blank">NDL Registration</a></li>
+   <li><a href="homepage_pages/NMEICT.html" target="_blank">NMEICT</a></li>   
+   <li><a href="iqac/Internal_Quality_cell.html" target="_blank">IQAC</a></li>
+<!--   <li><a href="homepage_pages/bcategory-btech.html" target="_blank">B-Category Admissions<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--? (UG)<!--<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--?--> <!--</a></li> -->
+   <li><a href="homepage_pages/annualreport.html" target="_blank">ANNUAL REPORTS</a></li>
+
+    <!--<li> <a href="homepage_pages/inst_MTech.html" target="_blank">--> <!--<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--?--><!--Academics <span><!--<img src="images/icon_new.gif" width="" height="" alt="new" />--><!--</span> (PG) under Autonomous</a></li>-->
+    <!--<li><a href="homepage_pages/bcategory.html" target="_blank">B-Category<!--<img src="images/icon_new.gif" width="" height="" alt="new" /> Admissions-2018-19</a></li>-->
+						
+<!--   <li><a href="homepage_pages/Classwork_Timetables.html" target="_blank">Classwork <!--<img src="images/icon_new.gif" width="" height="" alt="new" />Timetables</a></li>-->
+   <li><a href="homepage_pages/GeneralHolidays-2021.pdf" target="_new">Holidays Notification</a></li>
+   <li><a href="homepage_pages/messages/messages_from_Prominent_Persons.html" target="_blank">
+ <!--<img src="images/msg_pro_persons.gif" width="" height="" alt="msg_pro_per">-->
+
+Messages from Prominent Persons</a></li>
+   <li><a href="PDF/AcademicVerificationForGenuineness.pdf" target="_blank">Academic Verification for Genuineness</a></li>
+   <li><a href="Audit Reports.html" target="_blank">Audit Reports<!--<img src="images/icon_new.gif" width="" height="" alt="new" />--></a></li>
+   <li><a href="Amenities/Hostels.html" target="_blank">Amenities</a></li>
+   <li><a href="Archive/2019/2019.html" target="_blank">Archives</a> </li>
+   <li><a href="annexures.html" target="_blank">Annexures</a> </li>   
+   <li><a href="contact_us/home.html" target="_blank">Contact Us</a></li>
+   </ul>
+</div>
+			
+<div class="clear"></div>
+	<!--End Stories Area-->
+    <div class="grid_12" >
+   
+   <div class="grid_3" style="width:300px; height:130px; padding-top:8px; margin:3px; border-color:#CDE8FC; border-style:solid; border-width:1px;">
+       <div style="width:150px; height:130px; float:left;"><div> <p  style="width:100%;  text-align:center; vertical-align:middle"><img width="130" style="border-color:#3CF; border-width:2px; border-style:solid;" height="115" src="https://www.kitsw.ac.in/images/correspondent.jpg" alt="DSC_0635e.jpg" /> <br />
+       </p></div></div>
+     <div  style="width:145px; height:130px; float:right;">
+       <p style="text-align:center; font-size:11px; font-weight:bold;margin-right:5px; ">&nbsp;</p>
+       <p style="text-align:center; font-size:12px; font-weight:bold;margin-right:5px; "><span class="profile_heading_withoutbg" style="text-align:center;">Capt.  V. Lakshmikantha Rao</span><br />
+        <span style="color:#36F"> Secretary  &amp; Correspondent,<br />
+          MP (Rajyasabha)</span></p>
+  </div>
+        
+      </div>
+      <div class="grid_3" style="width:300px; height:130px; padding-top:8px; margin:3px; border-color:#CDE8FC; border-style:solid; border-width:1px;">
+       <div style="width:150px; height:130px; float:left;"><div> <p  style="width:100%;  text-align:center;"><img width="130" height="115"  style="border-color:#3CF; border-width:2px; border-style:solid;" src="https://www.kitsw.ac.in/images/Treasurer.jpg" alt="DSC_0635e.jpg" /> <br />
+       </p></div></div>
+     <div  style="width:145px; height:130px; float:right;"><p style="text-align:center; font-size:12px; font-weight:bold; ">&nbsp; </p>
+       <p style="text-align:center; font-size:12px; font-weight:bold;margin-right:15px; ">&nbsp;</p>
+       <p style="text-align:center; font-size:12px; font-weight:bold;margin-right:15px; "><span class="profile_heading_withoutbg" style="text-align:center;">Sri P.Narayana Reddy</span><br />
+       
+      <span style="color:#36F" >Treasurer</span></p>
+</div>
+        
+      </div>
+    
+         
+     <div class="grid_3" style="width:300px; height:130px; padding-top:8px; margin:3px; border-color:#CDE8FC; border-style:solid; border-width:1px;">
+       <div style="width:150px; height:130px; float:left;"><div> <p  style="width:100%;  text-align:center;"><img width="130" height="115"  style="border-color:#3CF; border-width:2px; border-style:solid;" src="https://www.kitsw.ac.in/images/prinicipal.jpg" alt="DSC_0635e.jpg" /></p></div></div>
+     <div  style="width:145px; height:130px; float:right;"><p style="text-align:center; font-size:12px; font-weight:bold; ">&nbsp; </p>
+       <p style="text-align:center; font-size:12px; font-weight:bold; margin-right:15px;">&nbsp;</p>
+       <p style="text-align:center; font-size:12px; font-weight:bold; margin-right:15px;"><a href="homepage_pages/KAR_CV_15_04_2019.pdf" target="_blank"><span class="profile_heading_withoutbg" style="text-align:center; text-decoration:none;">Dr. K.Ashoka Reddy</span></a><br />
+     <span style="color:#36F">Principal</span><br />
+       </p>
+</div>
+        
+      </div>
+    
+    </div>
+    <div class="grid_12" >
+    <div class="grid_5"> <div style="margin-bottom:-18px; height:23px;padding-left:170px; padding-top:5px; background-image:url(images/mission_vision_bg.jpg); background-repeat:no-repeat; background-position:center; color:#FFF; font-size:15px;"><strong>Vision</strong></div>
+ <div style="border: 2px solid #F90; border-radius:15px; margin:5px; padding:10px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:26px; text-align:justify;" >
+   To make our  students technologically superior and ethically strong by providing quality  education with the help of our dedicated faculty and staff and thus improve the  quality of human life. 
+ </div>
+<div style="text-align:center"> <a href="https://goo.gl/maps/jHjG5RcofVq" target="_new"><img src="https://www.kitsw.ac.in/images/google-map_26-9-18.gif" width="200" height="30" alt="googleImage" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a></div>
+    </div>
+    <div class="grid_7"> <div style="margin-bottom:-18px; height:23px;padding-left:245px; padding-top:5px; background-image:url(images/mission_vision_bg.jpg); background-repeat:no-repeat; background-position:center; color:#FFF; font-size:15px;"><strong><span style="width:100%;  text-align:center;"></span>Mission</strong></div>
+ <div style="border: 2px solid #F90; border-radius:15px; margin:5px; padding:10px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:18px;" ><div><ul><li style="list-style:none; text-align: justify;">To provide latest technical knowledge,  analytical and practical skills, managerial competence and interactive  abilities to students, so that their employability is enhanced.</li></ul></div>
+<div><ul><li style="list-style:none; text-align: justify;">To provide a strong human resource base for  catering to the changing needs of the Industry and Commerce.</li></ul></div>
+<div><ul><li style="list-style:none;">To inculcate a sense of brotherhood and national  integrity.</li></ul></div></div></div>
+    
+<div style="text-align:center"> <a href="images/26-09-2018 KITSW COLOUR LAYOUT LATEST-Model.jpg" target="_new"><img src="https://www.kitsw.ac.in/images/Campus-Layout-Map.gif" width="200" height="30" alt="googleImage" longdesc="https://goo.gl/maps/jHjG5RcofVq"></a><a href="https://twitter.com/KitsWarangal" target="_blank"><img src="https://www.kitsw.ac.in/images/Twitter-icon.png" alt="twitter" width="25" height="25" border="0" align="right"></a><a href="https://goo.gl/maps/jHjG5RcofVq" target="_new"></a></div>
+
+    
+  </div>
+    <!--<div class="grid_12" >
+    <div class="grid_2">
+	  <a href="correspondent_message.html" target="_new"><div style="width:130px; height:137px; float:left; padding:1px; margin:1px; border-color:#CDE8FC; border-style:solid; border-width:1px;">
+       <h5 style="font-size:12px; font-weight:bold; color:#FFF; text-align: center; background-color:#101538; background-image:url(images/pri_bg.jpg); background-repeat:repeat-x;" >Secretary &amp; Correspondent</h5>   
+        
+       <div style="text-align:center; color:#000; font-weight:bold; font-size:12px; background-image:url(images/correspondent.jpg); background-repeat:no-repeat; height:10px; padding-top:103px; ">Capt. V.L.K. Rao</div>           
+  </div>	</a>
+<a href="Treasurer_message.html" target="_new"><div style="width:130px; height:137px; float:left; padding:1px; margin:1px; border-color:#CDE8FC; border-style:solid; border-width:1px;">
+       <h5 style="font-size:12px; font-weight:bold; color:#FFF; text-align: center; background-color:#101538; background-image:url(images/pri_bg.jpg); background-repeat:repeat-x; line-height:23px;" >Treasurer</h5>   
+        
+       <div style="text-align:center; color:#000; font-weight:bold; font-size:12px; background-image:url(images/Treasurer.jpg); background-repeat:no-repeat; height:10px; padding-top:103px; ">Sri P.Narayana Reddy</div>           
+  </div>	</a>
+ 
+</div>
+
+	<div class="grid_8">
+    
+    <div style="margin-bottom:-18px; height:23px;padding-left:288px; padding-top:5px; background-image:url(images/mission_vision_bg.jpg); background-repeat:no-repeat; background-position:center; color:#FFF; font-size:15px;"><strong>Vision</strong></div>
+ <div style="border: 2px solid #F90; border-radius:15px; margin:5px; padding:20px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:20px;" >To make our  students technologically superior and ethically strong by providing quality  education with the help of our dedicated faculty and staff and thus improve the  quality of human life.</div>
+    <div style="margin-bottom:-18px; height:23px;padding-left:290px; padding-top:5px; background-image:url(images/mission_vision_bg.jpg); background-repeat:no-repeat; background-position:center; color:#FFF; font-size:15px;"><strong>Mission</strong></div>
+ <div style="border: 2px solid #F90; border-radius:15px; margin:5px; padding:20px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:20px;" ><div><ul><li style="list-style:outside;">To provide latest technical knowledge,  analytical and practical skills, managerial competence and interactive  abilities to students, so that their employability is enhanced.</li></ul></div>
+<div><ul><li style="list-style:outside;">To provide a strong human resource base for  catering to the changing needs of the Industry and Commerce.</li></ul></div>
+<div><ul><li style="list-style:outside;">To inculcate a sense of brotherhood and national  integrity.</li></ul></div></div>
+
+     
+       
+ 
+ 
+ </div>
+    <div class="grid_2_last" style="">
+<a href="Director_message.html" target="_new"> <div style="width:130px; height:137px; float:right; padding:1px; margin:1px; border-color:#CDE8FC; border-style:solid; border-width:1px; text-align:center;"><h5 style="font-size:12px; font-weight:bold; color:#FFF; background-image:url(images/pri_bg.jpg); background-repeat:repeat-x; line-height:25px;" >Director</h5>
+     <div style="text-align:center; color:#000; font-weight:bold; font-size:12px; background-image:url(images/Director.jpg); background-repeat:no-repeat; height:15px; padding-top:102px;">Dr.Y.Manohar</div> 
+  </div>
+  </a>	  
+<a href="#" principle_message.html target="_new"> <div style="width:132px; height:137px; float:right; padding:1px; margin:1px; border-color:#CDE8FC; border-style:solid; border-width:1px; text-align:center;"><h5 style="font-size:12px; font-weight:bold; color:#FFF; background-image:url(images/pri_bg.jpg); background-repeat:repeat-x; line-height:25px;" >Principal</h5>
+     <div style="text-align:center; color:#000; font-weight:bold; font-size:11px; background-image:url(images/prinicipal_new.jpg); background-repeat:no-repeat; height:15px; padding-top:102px; ">Dr. P.Venkateshwar Rao</div> 
+  </div>
+  </a> 
+  
+</div>
+    </div>--><!--Top Section-->
+
+	
+<div class="clear"></div>
+	<!--End TopSection-->
+	
+	
+	
+	<!-- Stories Area-->
+    <div style="margin:5px 0px 0px 0px; background-image:url(images/stripes.jpg); background-repeat:repeat-x; height: 120px; background-color:#003B7D;" id="footer_menu">
+	<div class="grid_3" style="border-right:solid; border-right-width:1px; border-right-color:#d52b1e; height: 120px;">
+	  <div style="width:100%; padding:5px 0px; text-align:left; background-color:#d52b1e"><h5 style="font-size:13px; color: #fff;">Admissions/Registration</h5></div>
+<ul style="list-style:circle; list-style:inside;">
+      <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px; ">B. Tech</li>
+       <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">M. Tech</li>
+        <!--  <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">M.C.A. </li>-->
+          <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">M.B.A. </li>
+         
+      </ul>
+</div>
+	
+	<div class="grid_3" style="border-right:solid; border-right-width:1px; border-right-color:#d52b1e; height: 120px;">
+	  <div style="width:100%; padding:5px 0px; text-align:left; background-color:#d52b1e"><h5 style="font-size:13px; color: #fff;">Exams/Notifications</h5></div>
+<ul style="list-style:circle; list-style:inside;">
+       <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px; "><a href="http://kitsw.ac.in/examinations/Examinations_notifications.html" target="_blank"><span style="color:#FFF; text-decoration:none;">B. Tech</span></a></li>
+       <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;"><a href="http://kitsw.ac.in/examinations/Examinations_notifications.html" target="_blank"><span style="color:#FFF; text-decoration:none;">M. Tech</span></a></li>
+          <!--<li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;">M.C.A. </li>-->
+          <li style="font-family:Arial, Helvetica, sans-serif; font-size:12px;"><a href="http://kitsw.ac.in/examinations/Examinations_notifications.html" target="_blank"><span style="color:#FFF; text-decoration:none;">M.B.A. </span></a></li>
+      </ul>
+	</div>
+	
+	<div class="grid_4" style="border-right:solid; border-right-width:1px; border-right-color:#d52b1e; height: 120px;">
+	  <div style="width:100%; padding:5px 0px; text-align:left; background-color:#d52b1e"><h5 style="font-size:13px; color: #fff;">Important Dates</h5></div>
+<ul>
+<!--<li>B.Tech IV Year I Sem End Exams starts from 15.12.2015.</li>
+ <li>
+     
+      B.Tech III Year I Sem End Exams starts from  16.12.2015.</li>-->
+      
+    <!--  <li>
+      B.Tech I Year I Sem (Autonomous) Exams Starts from 28.12.2015.</li> <li>B.Tech. I Semester End Semester Exams starts from 17-01-2015.<!--B.Tech. II,III & IV year University Theory Exams commences from 11.11.2014</li>
+    <li>B.Tech. I Year I Semester(Autonomous Batch) Practical Examinations starts from 02.01.2015</li>-->
+ </ul>
+      </div>
+	
+	<div class="grid_2_last">
+<div style="width:100%; padding:5px 0px; text-align:left; background-color:#d52b1e"><h5 style="font-size:13px; color: #fff;">Contacts</h5></div>
+		 <ul style="list-style:circle; list-style:inside; font-family:Arial, Helvetica, sans-serif; font-size:12px;">
+<!--          <li>+91 870 2564 888</li>
+          <li>+91 870 2564 322</li>
+          <li>+91 870 2564 320 (Fax)</li>-->
+          <li>+91 7382564888</li>
+          <li>+91 9392055211</li>
+<!--          <li>+91 870 2564 320 (Fax)</li>-->		  
+         
+          <li> principal@kitsw.ac.in</li>		  
+          <li> principal.kitswgl@gmail.com</li>		  
+      </ul>
+	</div>
+   
+    <div class="grid_12_last" id="navbar" style="margin-left:px;">
+		<div class="grid_3" style="font-family:Arial, Helvetica, sans-serif; size:11px; vertical-align:middle; ">
+        Copyright &copy; 2013 <span style="padding-left:40px;">Visitor No: </span></div>
+      <div class="grid_2" style="font-family:Arial, Helvetica, sans-serif; size:11px; vertical-align:middle; ">
+      
+     <a href="http://www.reliablecounter.com/" target="_blank"><img src="https://www.reliablecounter.com/count.php?page=www.kitsw.ac.in3&amp;digit=style/plain/12/&amp;reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com/" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none; display:none;">3d Print Models</a>
+      <!--<a href="http://www.ewebsitecounter.com/featurescounter.php" target="_blank">
+<img src="http://ewebsitecounter.com/counter/counter.php?page=28516&style=0037&nbdigits=9&type=page&initCount=0" style="height:16px;" alt="Track Websites" border="0" >
+</a>--></div>
+
+         <div class="grid_3" style="text-align:center;">Updated on <script type="text/javascript"><!--
+function makeArray() {
+for (i = 0; i<makeArray.arguments.length; i++)
+this[i + 1] = makeArray.arguments[i];
+}
+
+var months = new makeArray('01','02','03','04','05',
+'06','07','08','09','10','11','12');
+
+var date = new Date(document.lastModified);
+var day = date.getDate();
+day = day < 10 ? '0'+day : day;
+var month = date.getMonth() + 1;
+var yy = date.getYear();
+var tth = date.getHours();
+var ttm = date.getMinutes();
+var tts = date.getSeconds();
+var year = (yy < 1000) ? yy + 1900 : yy;
+
+document.write(day + "/" + months[month] + "/" + year );
+
+//--></script></div>
+        <div class="grid_4_last" style="font-family:Arial, Helvetica, sans-serif; size:11px; text-align:right; padding-right:3px; ">Designed and Developed  by <a href="http://iyuga.co.in/" target="_new">www.iYuga.co.in</a></div>
+</div>
+</div>
+ <div class="grid_12" style="text-align:center; font-size:10px; font-family:Verdana, Geneva, sans-serif; margin:auto;" >
+ Best viewed in browser Internet Explorer 9 or above with screen_Resolution
+ 1024X1280</div>
+</div>
+<script>
+
+
+	function tick2(){
+		$('#ticker_02 li:first').slideUp( function () { $(this).appendTo($('#ticker_02')).slideDown(); });
+	}
+	setInterval(function(){ tick2 () }, 5000);
+	function tick3(){
+		$('#ticker_03 li:first').slideUp( function () { $(this).appendTo($('#ticker_03')).slideDown(); });
+	}
+	setInterval(function(){ tick3 () }, 5000);
+	function tick4(){
+		$('#ticker_04 li:first').slideUp( function () { $(this).appendTo($('#ticker_04')).slideDown(); });
+	}
+	setInterval(function(){ tick4 () }, 5000);
+	function tick5(){
+		$('#ticker_05 li:first').slideUp( function () { $(this).appendTo($('#ticker_05')).slideDown(); });
+	}
+	setInterval(function(){ tick5 () }, 5000);
+	function tick6(){
+		$('#ticker_06 li:first').slideUp( function () { $(this).appendTo($('#ticker_06')).slideDown(); });
+	}
+	setInterval(function(){ tick6 () }, 5000);
+
+
+	/**
+	 * USE TWITTER DATA
+	 */
+
+	 $.ajax ({
+		 url: 'http://search.twitter.com/search.json',
+		 data: 'q=%23javascript',
+		 dataType: 'jsonp',
+		 timeout: 10000,
+		 success: function(data){
+		 	if (!data.results){
+		 		return false;
+		 	}
+
+		 	for( var i in data.results){
+		 		var result = data.results[i];
+		 		var $res = $("<li />");
+		 		$res.append('<img src="' + result.profile_image_url + '" />');
+		 		$res.append(result.text);
+
+		 		console.log(data.results[i]);
+		 		$res.appendTo($('#ticker_04'));
+		 	}
+			setInterval(function(){ tick4 () }, 4000);	
+
+			$('#example_4').show();
+f
+		 }
+	});
+
+
+</script>
+<script>
+$("marquee").hover(function () { 
+    this.stop();
+},
+
+ function () {
+    this.start();
+});
+
+</script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("January 29, 2019 11:00:00").getTime();
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+// Get todays date and time
+var now = new Date().getTime();
+// Find the distance between now an the count down date
+var distance = countDownDate - now;
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Output the result in an element with id="demo"
+document.getElementById("demo").innerHTML = "Watch live PARIKSHA" + "<br />" +"PE CHARCHA 2.0 at 11:00 AM "+ "<br />" + "CountDown : "  + days + "d " + hours + "h "
++ minutes + "m " + seconds + "s ";
+// If the count down is over, write some text
+if (distance < 0) {
+clearInterval(countdownfunction);
+document.getElementById("demo").innerHTML = "EXPIRED";
+}
+}, 1000);
+</script>
+</body>
+
+<!-- Mirrored from www.kitsw.ac.in/ by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 03 Nov 2017 12:32:39 GMT -->
+</html>
